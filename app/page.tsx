@@ -1,3 +1,7 @@
 export default function Home() {
-  return <h1 className='text-black font-bold font-amiko'>Hello Shop</h1>
+  return (
+    <section className='w-11/12 max-w-5xl mx-auto mt-28'>
+      <h2>merch</h2>
+    </section>
+  )
 }
