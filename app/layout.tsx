@@ -1,6 +1,7 @@
 import type { Metadata } from 'next'
 import '@/static/globals.css'
-import { Header } from '@/components/header'
+import Header from '@/components/header'
+import Footer from '@/components/footer'
 
 export const metadata: Metadata = {
   title: 'The Shop Pet Land',
@@ -17,6 +18,7 @@ export default function RootLayout({
       <body>
         <Header />
         <main>{children}</main>
+        <Footer />
       </body>
     </html>
   )
