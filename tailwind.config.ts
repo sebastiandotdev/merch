@@ -11,11 +11,11 @@ const config: Config = {
       backgroundImage: {
         'hero-pattern': "url('/static/header_bg.svg')",
       },
-      },
-      fontFamily: {
-        'amiko': ['Amiko', 'sans-serif'],
-      }
     },
+    fontFamily: {
+      amiko: ['Amiko', 'sans-serif'],
+    },
+  },
   plugins: [],
 }
 export default config
