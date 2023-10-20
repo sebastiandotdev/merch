@@ -7,8 +7,15 @@ const config: Config = {
     './app/**/*.{js,ts,jsx,tsx,mdx}',
   ],
   theme: {
-    extend: {},
-  },
+    extend: {
+      backgroundImage: {
+        'hero-pattern': "url('/static/header_bg.svg')",
+      },
+      },
+      fontFamily: {
+        'amiko': ['Amiko', 'sans-serif'],
+      }
+    },
   plugins: [],
 }
 export default config

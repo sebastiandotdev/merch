@@ -7,7 +7,7 @@ if (NAME_SHOPIFY === undefined || TOKEN_SHOPIFY === undefined) {
   throw new Error('env `SHOPIFY_SHOP` and `SHOPIFY_ACCESS_TOKEN` must be set')
 }
 
-async function graphql<T>(
+export async function graphql<T>(
   query: string,
   variables: Record<string, unknown> = {},
 ): Promise<T> {
