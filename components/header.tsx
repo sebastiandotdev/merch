@@ -1,5 +1,5 @@
 import Image from 'next/image'
-import petCat from '@/static/not-bg-cat-pet.png'
+import petCat from '@/public/not-bg-cat-pet.png'
 import { Cart } from './cart'
 
 export default function Header() {
