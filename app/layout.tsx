@@ -1,5 +1,5 @@
 import type { Metadata } from 'next'
-import '@/assets/globals.css'
+import '@/static/globals.css'
 
 export const metadata: Metadata = {
   title: 'The Shop Pet Land',
