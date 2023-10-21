@@ -7,7 +7,7 @@ export function Cart() {
         <IconCart />0
       </button>
       <dialog
-        className={`bg-transparent p-0 m-0 pt-[50%] sm:pt-0 sm:ml-auto max-w-full sm:max-w-lg w-full max-h-full h-full`}
+        className='bg-transparent p-0 m-0 pt-[50%] sm:pt-0 sm:ml-auto max-w-full sm:max-w-lg w-full max-h-full h-full'
       ></dialog>
     </div>
   )
