@@ -1,12 +1,16 @@
 # Contribuidor
 
-Bienvenido contribuidor a merch
+Bienvenido contribuidor a merch, ¡Gracias por tu interés en contribuir con merch! Tómese un momento para revisar este documento antes de enviar una solicitud de extracción.
 
-## Guia
+## pull request
 
-### commits
+Solicitudes de extracción Pregunte primero antes de comenzar a trabajar en cualquier característica nueva importante.
+
+## commits
+
+commits
+
 Tipos de commits:
-
 
 - feat: Para nuevas características o funcionalidades.
 - fix: Para corrección de errores.
@@ -18,7 +22,8 @@ Tipos de commits:
 - build: Para cambios relacionados con la construcción del proyecto, como configuración de compilación o dependencias.
 - ci: Para cambios en la configuración de integración continua.
 - perf: Para mejoras de rendimiento.
-- 
+
+
 Ejemplos de otros commits siguiendo estas convenciones:
 
 - feat: add user registration feature
@@ -30,3 +35,7 @@ Ejemplos de otros commits siguiendo estas convenciones:
 - build: update webpack configuration
 - ci: configure CircleCI for automated testing
 - perf: optimize database query performance
+
+## Coding standards
+
+Nuestras reglas de formato de código están definidas en [.eslintrc]. Puede comparar su código con estos estándares ejecutando:
