@@ -9,14 +9,18 @@
   "license": "MIT",
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/castrogarciajs/shop.git"
+    "url": "git+https://github.com/castrogarciajs/merch.git"
   },
   "scripts": {
     "dev": "next dev",
+    "test:dev": "vitest",
+    "test": "vitest --run",
     "build": "next build",
     "start": "next start",
     "lint": "next lint",
-    "ci": "pnpm run lint && pnpm run build"
+    "ci": "pnpm run lint && pnpm run build",
+    "fmt": "prettier . --write --cache",
+    "clean": "rimraf .next && rimraf node_modules && pnpm install"
   },
   "dependencies": {
     "next": "13.5.6",
@@ -31,7 +35,10 @@
     "eslint": "8.51.0",
     "eslint-config-next": "13.5.6",
     "postcss": "8.4.31",
+    "prettier": "3.0.3",
+    "rimraf": "5.0.5",
     "tailwindcss": "3.3.3",
-    "typescript": "5.2.2"
+    "typescript": "5.2.2",
+    "vitest": "0.34.6"
   }
 }
