@@ -1,6 +1,6 @@
 import { IconCart } from './icons'
 
-export function Cart() {
+export default function Cart() {
   return (
     <div>
       <button className='flex gap-2 items-center border-2 border-gray-800 rounded-full px-5 py-1 font-semibold text-gray-800 hover:bg-gray-800 hover:text-white transition-colors duration-300'>
