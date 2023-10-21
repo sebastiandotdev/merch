@@ -21,12 +21,12 @@ Tipos de commits:
 - 
 Ejemplos de otros commits siguiendo estas convenciones:
 
-feat: add user registration feature
-fix: resolve issue with login form validation
-docs: update installation guide
-style: format code according to style guide
-refactor: simplify user authentication logic
-test: add unit tests for user service
-build: update webpack configuration
-ci: configure CircleCI for automated testing
-perf: optimize database query performance
+- feat: add user registration feature
+- fix: resolve issue with login form validation
+- docs: update installation guide
+- style: format code according to style guide
+- refactor: simplify user authentication logic
+- test: add unit tests for user service
+- build: update webpack configuration
+- ci: configure CircleCI for automated testing
+- perf: optimize database query performance
