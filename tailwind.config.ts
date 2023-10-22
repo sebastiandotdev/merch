@@ -9,8 +9,8 @@ const config: Config = {
     theme: {
         extend: {
             backgroundImage: {
-                'hero-pattern': 'url("/background-pet-cat.jpg")'
-            }
+                'hero-pattern': 'url("/background-pet-cat.jpg")',
+            },
         },
         fontFamily: {
             amiko: ['Amiko', 'sans-serif'],
