@@ -1,4 +1,4 @@
-export default function contact() {
+export default function ContactUs() {
     return (
         <>
             <section className='w-full flex  justify-center items-center  '>
