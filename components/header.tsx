@@ -1,6 +1,7 @@
 import Image from 'next/image'
 import petCat from '@/public/not-bg-cat-pet.png'
 import Cart from './cart'
+import Navbar from './navbar'
 
 export default function Header() {
     return (
@@ -17,7 +18,7 @@ export default function Header() {
                             className='w-auto h-12 rounded-full'
                         />
                     </a>
-                    <h1 className='font-amiko text-3xl'>The pet land shop</h1>
+                    <Navbar/>
                     <Cart />
                 </nav>
             </header>
