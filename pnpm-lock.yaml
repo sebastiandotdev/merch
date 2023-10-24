@@ -29,7 +29,7 @@ devDependencies:
         specifier: 18.2.14
         version: 18.2.14
     '@vitejs/plugin-react':
-        specifier: ^4.1.0
+        specifier: 4.1.0
         version: 4.1.0(vite@4.5.0)
     autoprefixer:
         specifier: 10.4.16
