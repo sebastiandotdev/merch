@@ -1,47 +1,47 @@
 {
-    "name": "merch",
-    "version": "0.0.1",
-    "description": "The Shop for pet land",
-    "author": {
-        "name": "castrogarciajs",
-        "email": "johancs.mm@gmail.com"
-    },
-    "license": "MIT",
-    "repository": {
-        "type": "git",
-        "url": "git+https://github.com/castrogarciajs/merch.git"
-    },
-    "scripts": {
-        "dev": "next dev",
-        "test:dev": "vitest",
-        "test": "vitest --run",
-        "build": "next build",
-        "start": "next start",
-        "lint": "next lint",
-        "ci": "pnpm run lint && pnpm run build",
-        "fmt": "prettier . --write --cache",
-        "clean": "rimraf .next && rimraf node_modules && pnpm install"
-    },
-    "dependencies": {
-        "next": "13.5.6",
-        "react": "18.2.0",
-        "react-dom": "18.2.0"
-    },
-    "devDependencies": {
-        "@testing-library/react": "14.0.0",
-        "@types/node": "20.8.7",
-        "@types/react": "18.2.29",
-        "@types/react-dom": "18.2.14",
-        "@vitejs/plugin-react": "4.1.0",
-        "autoprefixer": "10.4.16",
-        "eslint": "8.51.0",
-        "eslint-config-next": "13.5.6",
-        "happy-dom": "12.9.1",
-        "postcss": "8.4.31",
-        "prettier": "3.0.3",
-        "rimraf": "5.0.5",
-        "tailwindcss": "3.3.3",
-        "typescript": "5.2.2",
-        "vitest": "0.34.6"
-    }
+  "name": "merch",
+  "version": "0.0.1",
+  "description": "The Shop for pet land",
+  "author": {
+    "name": "castrogarciajs",
+    "email": "johancs.mm@gmail.com"
+  },
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/castrogarciajs/merch.git"
+  },
+  "scripts": {
+    "dev": "next dev",
+    "test:dev": "vitest",
+    "test": "vitest --run",
+    "build": "next build",
+    "start": "next start",
+    "lint": "next lint",
+    "ci": "pnpm run lint && pnpm run build",
+    "fmt": "prettier . --write --cache",
+    "clean": "rimraf .next && rimraf node_modules && pnpm install"
+  },
+  "dependencies": {
+    "next": "13.5.6",
+    "react": "18.2.0",
+    "react-dom": "18.2.0"
+  },
+  "devDependencies": {
+    "@testing-library/react": "14.0.0",
+    "@types/node": "20.8.7",
+    "@types/react": "18.2.29",
+    "@types/react-dom": "18.2.14",
+    "@vitejs/plugin-react": "4.1.0",
+    "autoprefixer": "10.4.16",
+    "eslint": "8.51.0",
+    "eslint-config-next": "13.5.6",
+    "happy-dom": "12.9.1",
+    "postcss": "8.4.31",
+    "prettier": "3.0.3",
+    "rimraf": "5.0.5",
+    "tailwindcss": "3.3.3",
+    "typescript": "5.2.2",
+    "vitest": "0.34.6"
+  }
 }
