@@ -1,4 +1,4 @@
-import Card from '../components/card'
+import Card from '../../components/card'
 import { render, screen } from '@testing-library/react'
 
 test('should have text nodes defined', () => {
