@@ -1,4 +1,4 @@
-import Cart from '../../components/cart'
+import Cart from '../../components/shopping-cart'
 import { screen, render } from '@testing-library/react'
 
 test('should have a number greater than or equal to 0 of elements defined ', () => {
