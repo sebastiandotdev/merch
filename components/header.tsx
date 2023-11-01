@@ -1,5 +1,5 @@
 import Image from 'next/image'
-import petCat from '@/public/not-bg-cat-pet.png'
+import petCat from '../public/not-bg-cat-pet.png'
 import Cart from './cart'
 import Navbar from './navbar'
 import Link from 'next/link'

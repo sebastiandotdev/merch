@@ -1,5 +1,5 @@
 import Link from 'next/link'
-import { navbarMerch } from '@/lib/utils'
+import { navbarMerch } from '../lib/utils'
 
 export default function Navbar() {
   return (
