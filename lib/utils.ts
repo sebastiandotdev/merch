@@ -12,7 +12,7 @@ const navbarMerch = [
   {
     id: 3,
     label: 'Contact',
-    href: '/contact',
+    href: '/contact-us',
   },
 ]
 
