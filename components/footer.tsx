@@ -10,7 +10,7 @@ export default function Footer() {
           className='flex gap-2 items-center font-amiko bg-white rounded-md border border-gray-300 p-1.5'
         >
           <Image src='/next-js_1.png' alt='Nextjs' width={20} height={20} />
-          made with Nextjs
+          Made with Nextjs
         </a>
         <a
           className='hover:underline flex gap-2 items-center font-amiko'
