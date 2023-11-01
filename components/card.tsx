@@ -1,11 +1,11 @@
 import Link from 'next/link'
 import { IconCart } from './icons'
 import Image from 'next/image'
-import exampleImage from '@/public/example-photo.jpg'
+import exampleImage from '../public/example-photo.jpg'
 
 export default function Card() {
   return (
-    <Link href='#' className='gruop'>
+    <Link href='#' className='gruop' role='link'>
       <header className='w-full relative border-2 border-gray-200 rounded-xl'>
         <article className='w-full h-full flex items-center justify-center bg-[rgba(255,255,255,0.6)] opacity-0 hover:opacity-100 transition-opacity z-10 absolute duration-500'>
           <IconCart size={30} />
