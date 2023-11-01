@@ -1,3 +1,5 @@
+import Card from '@/components/card'
+
 export default function HomePage() {
   return (
     <>
@@ -16,7 +18,10 @@ export default function HomePage() {
         </article>
       </section>
       <section className='w-11/12 max-w-5xl mx-auto mt-28'>
-        <h2>merch</h2>
+        <div className='grid grid-cols-1 gap-8 sm:!gap-x-10 sm:!grid-cols-2 lg:!grid-cols-3 lg:!gap-x-12 lg:!gap-y-10'>
+          <Card />
+          <Card />
+        </div>
       </section>
     </>
   )
