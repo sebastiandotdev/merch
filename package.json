@@ -12,15 +12,16 @@
     "url": "git+https://github.com/castrogarciajs/merch.git"
   },
   "scripts": {
-    "dev": "next dev",
-    "test:dev": "vitest",
-    "test": "vitest --run",
+    "workflows": "pnpm run lint && pnpm run fmt.check && pnpm run build",
+    "fmt.check": "prettier . --check",
+    "test.dev": "vitest",
     "build": "next build",
+    "clean": "rimraf .next && rimraf node_modules && pnpm install",
     "start": "next start",
+    "test": "vitest --run",
     "lint": "next lint",
-    "ci": "pnpm run lint && pnpm run build",
-    "fmt": "prettier . --write --cache",
-    "clean": "rimraf .next && rimraf node_modules && pnpm install"
+    "dev": "next dev",
+    "fmt": "prettier . --write --cache"
   },
   "dependencies": {
     "next": "13.5.6",
