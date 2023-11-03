@@ -1,3 +1,4 @@
+import Link from 'next/link'
 import Card from '../components/card'
 
 export default function HomePage() {
@@ -9,12 +10,12 @@ export default function HomePage() {
           <h2 className='font-amiko text-5xl py-8 whitespace-pre-wrap font-semibold'>
             Browse our latest products
           </h2>
-          <a
-            href='#'
+          <Link
+            href='/catalog'
             className='border-2 lg:border-zinc-800 lg:hover:border-zinc-950 py-2 px-6 hover:cursor-pointer hover:transition-colors text-lg border-zinc-950'
           >
             Shop all
-          </a>
+          </Link>
         </article>
       </section>
       <section className='w-11/12 max-w-5xl mx-auto mt-28'>
