@@ -1,9 +1,19 @@
 import Image from 'next/image'
-import exampleImage from '../public/example-photo.jpg'
 import Link from 'next/link'
 import { IconCart } from './icons'
 
-export default function CardBuy() {
+type CardBuyProps = {
+  name: string
+  price: number
+  image: string
+  description: string
+}
+export default function CardBuy({
+  name,
+  image,
+  price,
+  description,
+}: CardBuyProps) {
   return (
     <Link href='#' className='group'>
       <header className='aspect-h-1 aspect-w-1 w-full overflow-hidden rounded-md bg-gray-200 lg:aspect-none group-hover:opacity-75 lg:h-80 relative'>
@@ -11,7 +21,7 @@ export default function CardBuy() {
           <IconCart size={30} />
         </aside>
         <Image
-          src={exampleImage}
+          src={image}
           alt='example'
           width={400}
           height={400}
@@ -20,10 +30,10 @@ export default function CardBuy() {
       </header>
       <div className='mt-4 flex justify-between'>
         <div className='container px-0.5'>
-          <h3 className='text-md text-gray-700 font-amiko'>Basic Tee</h3>
-          <p className='mt-1 text-sm text-gray-500 font-amiko'>Aspen White</p>
+          <h3 className='text-md text-gray-700 font-amiko'>{name}</h3>
+          <p className='mt-1 text-sm text-gray-500 font-amiko'>{description}</p>
         </div>
-        <p className='text-md font-medium text-gray-900 font-amiko'>$10.000</p>
+        <p className='text-md font-medium text-gray-900 font-amiko'>${price}</p>
       </div>
     </Link>
   )
