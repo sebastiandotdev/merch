@@ -1,5 +1,14 @@
-/**CONFIG NEXT.JS */
 /** @type {import('next').NextConfig} */
-const nextConfig = {}
+const nextConfig = {
+  images: {
+    remotePatterns: [
+      {
+        protocol: 'https',
+        hostname: 'i.postimg.cc',
+        port: '',
+      },
+    ],
+  },
+}
 
 module.exports = nextConfig
