@@ -12,7 +12,7 @@
     "url": "git+https://github.com/castrogarciajs/merch.git"
   },
   "scripts": {
-    "workflows": "pnpm run lint && pnpm run fmt.check && pnpm run build",
+    "workflows": "pnpm run lint && pnpm run fmt.check && pnpm run test && pnpm run build",
     "fmt.check": "prettier . --check",
     "test.dev": "vitest",
     "build": "next build",
