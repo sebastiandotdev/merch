@@ -2,18 +2,19 @@ import Link from 'next/link'
 import CardBuy from '../components/card-buy'
 import { Data } from '../lib/types'
 
-const getMerchs = async <T = [],>(): Promise<T> => {
-  try {
-    const res = await fetch('https://merch-inky.vercel.app/api')
-    const json = await res.json()
 
-    return json.data
-  } catch (error) {
-    console.error('Error fetching data:', error)
-    throw error
-  }
-}
 export default async function HomePage() {
+  const getMerchs = async <T = [],>(): Promise<T> => {
+    try {
+      const res = await fetch('https://merch-inky.vercel.app/api')
+      const json = await res.json()
+  
+      return json.data
+    } catch (error) {
+      console.error('Error fetching data:', error)
+      throw error
+    }
+  }
   const merchs = await getMerchs<Data[]>()
 
   return (
