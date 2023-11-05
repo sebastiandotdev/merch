@@ -20,9 +20,7 @@ export default function CardBuy() {
       </header>
       <div className='mt-4 flex justify-between'>
         <div className='container px-0.5'>
-          <h3 className='text-md text-gray-700 font-amiko'>
-            Basic Tee
-          </h3>
+          <h3 className='text-md text-gray-700 font-amiko'>Basic Tee</h3>
           <p className='mt-1 text-sm text-gray-500 font-amiko'>Aspen White</p>
         </div>
         <p className='text-md font-medium text-gray-900 font-amiko'>$10.000</p>
