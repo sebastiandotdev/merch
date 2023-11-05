@@ -4,7 +4,7 @@ import { Data } from '../lib/types'
 
 const getMerchs = async <T = [],>(): Promise<T> => {
   try {
-    const res = await fetch('http://localhost:3000/api/')
+    const res = await fetch('https://merch-inky.vercel.app/api/')
     const json = await res.json()
 
     return json.data
