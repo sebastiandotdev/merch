@@ -1,11 +1,19 @@
+'use client'
+
+import { useState } from 'react'
 import { IconCart } from './icons'
+import PanelBuy from './panel-buy'
 
 export default function Cart() {
+  const [openPanel, setOpenPanel] = useState(false)
+
   return (
     <div role='tooltip'>
+      <PanelBuy open={openPanel} setOpen={setOpenPanel} />
       <button
         className='flex gap-2 items-center border-2 border-gray-800 rounded-full px-5 py-1 font-semibold text-gray-800 hover:bg-gray-800 hover:text-white transition-colors duration-300'
         id='total'
+        onClick={() => setOpenPanel(true)}
       >
         <IconCart />0
       </button>
