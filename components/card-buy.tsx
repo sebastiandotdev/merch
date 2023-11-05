@@ -21,7 +21,6 @@ export default function CardBuy() {
       <div className='mt-4 flex justify-between'>
         <div className='container px-0.5'>
           <h3 className='text-md text-gray-700 font-amiko'>
-            <span aria-hidden='true' className='absolute inset-0' />
             Basic Tee
           </h3>
           <p className='mt-1 text-sm text-gray-500 font-amiko'>Aspen White</p>
