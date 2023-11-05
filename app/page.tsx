@@ -1,5 +1,5 @@
 import Link from 'next/link'
-import Card from '../components/card'
+import CardBuy from '../components/card-buy'
 
 export default function HomePage() {
   return (
@@ -18,10 +18,18 @@ export default function HomePage() {
           </Link>
         </article>
       </section>
-      <section className='w-11/12 max-w-5xl mx-auto mt-28'>
+      <section className='w-11/12 max-w-5xl mx-auto mt-24'>
+        <h2 className='font-amiko text-4xl font-semibold mb-10'>
+          Featured Products
+        </h2>
         <div className='grid grid-cols-1 gap-8 sm:!gap-x-10 sm:!grid-cols-2 lg:!grid-cols-3 lg:!gap-x-12 lg:!gap-y-10'>
-          <Card />
-          <Card />
+          <CardBuy />
+          <CardBuy />
+          <CardBuy />
+          <CardBuy />
+          <CardBuy />
+          <CardBuy />
+          <CardBuy />
         </div>
       </section>
     </>
