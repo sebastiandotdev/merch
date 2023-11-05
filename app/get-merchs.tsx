@@ -12,6 +12,8 @@ export default function GetMerchs() {
         const res = await fetch('https://merch-inky.vercel.app/api')
         const json = await res.json()
 
+        console.log(json.data)
+
         setMerchs(json.data)
       } catch (error) {
         console.error('Error fetching data:', error)
