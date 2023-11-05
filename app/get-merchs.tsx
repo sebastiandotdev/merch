@@ -1,20 +1,19 @@
 'use client'
 
-import { useEffect, useState } from 'react'
+import { Fragment, useEffect, useState } from 'react'
 import { Data } from '../lib/types'
 import CardBuy from '../components/card-buy'
+import { createClientComponentClient } from '@supabase/auth-helpers-nextjs'
 
 export default function GetMerchs() {
-  const [merchs, setMerchs] = useState<Data[]>([])
+  const supabase = createClientComponentClient()
+
+  const [merchs, setMerchs] = useState<Data[] | null>([])
   useEffect(() => {
     const getMerchs = async () => {
       try {
-        const res = await fetch('https://merch-inky.vercel.app/api')
-        const json = await res.json()
-
-        console.log(json.data)
-
-        setMerchs(json.data)
+        const { data } = await supabase.from('merch').select('*')
+        setMerchs(data)
       } catch (error) {
         console.error('Error fetching data:', error)
         throw error
@@ -23,8 +22,8 @@ export default function GetMerchs() {
     getMerchs()
   }, [])
   return (
-    <>
-      {merchs.map((merch) => (
+    <Fragment>
+      {merchs?.map((merch) => (
         <CardBuy
           key={merch.id}
           name={merch.title}
@@ -33,6 +32,6 @@ export default function GetMerchs() {
           description={merch.description}
         />
       ))}
-    </>
+    </Fragment>
   )
 }
