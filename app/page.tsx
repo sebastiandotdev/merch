@@ -1,7 +1,21 @@
 import Link from 'next/link'
 import CardBuy from '../components/card-buy'
+import { Data } from '../lib/types'
 
-export default function HomePage() {
+const getMerchs = async <T = [],>(): Promise<T> => {
+  try {
+    const res = await fetch('http://localhost:3000/api/')
+    const json = await res.json()
+
+    return json.data
+  } catch (error) {
+    console.error('Error fetching data:', error)
+    throw error
+  }
+}
+export default async function HomePage() {
+  const merchs = await getMerchs<Data[]>()
+
   return (
     <>
       <section className='h-[50vh] lg:h-screen bg-hero-pattern bg-cover bg-no-repeat relative flex items-start lg:items-center justify-start'>
@@ -23,13 +37,15 @@ export default function HomePage() {
           Featured Products
         </h2>
         <div className='grid grid-cols-1 gap-8 sm:!gap-x-10 sm:!grid-cols-2 lg:!grid-cols-3 lg:!gap-x-12 lg:!gap-y-10'>
-          <CardBuy />
-          <CardBuy />
-          <CardBuy />
-          <CardBuy />
-          <CardBuy />
-          <CardBuy />
-          <CardBuy />
+          {merchs.map((merch) => (
+            <CardBuy
+              key={merch.id}
+              name={merch.title}
+              image={merch.photo}
+              price={merch.price}
+              description={merch.description}
+            />
+          ))}
         </div>
       </section>
     </>
