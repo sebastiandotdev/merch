@@ -1,4 +1,4 @@
-import Card from '../../components/card'
+import GetMerchs from '../get-merchs'
 
 export default function PageCatalog() {
   return (
@@ -13,7 +13,7 @@ export default function PageCatalog() {
         </nav>
       </header>
       <section className='grid grid-cols-1 gap-8 sm:!gap-x-10 sm:!grid-cols-2 lg:!grid-cols-3 lg:!gap-x-12 lg:!gap-y-10'>
-        <Card />
+        <GetMerchs />
       </section>
     </section>
   )
