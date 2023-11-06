@@ -5,9 +5,9 @@ export default defineConfig({
   plugins: [react()],
   test: {
     coverage: {
-      reporter: ['html', 'text', 'json']
+      reporter: ['html', 'text', 'json'],
     },
-    ui: true, 
+    ui: true,
     environment: 'happy-dom',
     globals: true,
   },
