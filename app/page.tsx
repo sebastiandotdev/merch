@@ -18,7 +18,7 @@ export default async function HomePage() {
           </Link>
         </article>
       </section>
-      <section className='w-11/12 max-w-5xl mx-auto mt-24'>
+      <section className='w-11/12 max-w-5xl mx-auto mt-24 pb-[2.5rem]'>
         <h2 className='font-amiko text-4xl font-semibold mb-10'>
           Featured Products
         </h2>
@@ -26,6 +26,25 @@ export default async function HomePage() {
           <GetMerchs />
         </div>
       </section>
+      <hr />
+      <section className='pb-[2.5rem] max-w-md mx-auto'>
+        <h2 className='font-amiko text-center my-10'>Subscribe to our email</h2>
+
+        <form action='#' className='text-center'>
+          <label
+            htmlFor='email'
+            className='border border-[#121212] mb-[2rem] p-3'
+          >
+            <input
+              type='email'
+              placeholder='Email'
+              name='email'
+              className='outline-none w-full'
+            />
+          </label>
+        </form>
+      </section>
+      <hr />
     </>
   )
 }
