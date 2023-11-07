@@ -3,7 +3,7 @@ import { GitHub, Nextjs } from './icons'
 
 export default function Footer() {
   return (
-    <footer className='w-11/12 max-w-5xl mx-auto mt-24 sm:!mt-28 mb-8 flex items-center justify-between'>
+    <footer className='w-11/12 max-w-5xl mx-auto mt-24 sm:!mt-28 mb-8 flex items-center justify-between flex-col lg:flex-row gap-y-8'>
       <span className='flex items-center gap-4'>
         <a
           href='https://nextjs.com'
