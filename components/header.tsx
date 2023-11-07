@@ -11,7 +11,7 @@ export default function Header() {
         <small className='font-amiko'>Welcome to our Shop</small>
       </header>
       <header className='bg-white shadow-md h-[100px] w-full relative'>
-        <nav className='w-11/12 h-24 max-w-5xl mx-auto flex items-center justify-between relative'>
+        <nav className='w-11/12 h-24 max-w-5xl mx-auto flex items-center justify-between relative flex-col lg:flex-row'>
           <div className='flex items-center gap-x-4'>
             <Link href='/'>
               <Image
