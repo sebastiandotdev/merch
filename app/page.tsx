@@ -4,7 +4,7 @@ import GetMerchs from './get-merchs'
 export default async function HomePage() {
   return (
     <>
-      <section className='h-[50vh] lg:h-screen bg-hero-pattern bg-cover bg-no-repeat relative flex items-start lg:items-center justify-start'>
+      <section className='h-[50vh] lg:h-screen bg-hero-pattern bg-cover bg-no-repeat relative flex items-start lg:items-center justify-start -z-10'>
         <div className='bg-gray-400 opacity-30 lg:h-full w-full absolute'></div>
         <article className='p-6 z-50 w-max'>
           <h2 className='font-amiko text-5xl py-8 whitespace-pre-wrap font-semibold'>
@@ -39,7 +39,7 @@ export default async function HomePage() {
               type='email'
               placeholder='Email'
               name='email'
-              className='outline-none w-full'
+              className='outline-none w-max lg:w-full'
             />
           </label>
         </form>
