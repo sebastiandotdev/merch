@@ -2,7 +2,7 @@ import CardBuy from '../../components/card-buy'
 import { render, screen } from '@testing-library/react'
 
 const merch = {
-  id: '1',
+  id: 1,
   name: 'Camiseta',
   price: 59.9,
   image: '/images/camiseta.png',
@@ -12,6 +12,7 @@ test('should have text nodes defined', () => {
   const DOM = render(
     <CardBuy
       key={merch.id}
+      id={merch.id}
       name={merch.name}
       description={merch.image}
       image={merch.image}
@@ -26,6 +27,7 @@ test('should image defined', () => {
   render(
     <CardBuy
       key={merch.id}
+      id={merch.id}
       name={merch.name}
       description={merch.image}
       image={merch.image}
@@ -40,6 +42,7 @@ test('should have styles class', () => {
   render(
     <CardBuy
       key={merch.id}
+      id={merch.id}
       name={merch.name}
       description={merch.image}
       image={merch.image}
@@ -55,6 +58,7 @@ test('should have atributtes href', () => {
   render(
     <CardBuy
       key={merch.id}
+      id={merch.id}
       name={merch.name}
       description={merch.image}
       image={merch.image}
@@ -70,6 +74,7 @@ test('should have atributtes src', () => {
   render(
     <CardBuy
       key={merch.id}
+      id={merch.id}
       name={merch.name}
       description={merch.image}
       image={merch.image}
