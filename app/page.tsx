@@ -26,25 +26,6 @@ export default async function HomePage() {
           <GetMerchs />
         </div>
       </section>
-      <hr />
-      <section className='pb-[2.5rem] max-w-md mx-auto'>
-        <h2 className='font-amiko text-center my-10'>Subscribe to our email</h2>
-
-        <form action='#' className='text-center'>
-          <label
-            htmlFor='email'
-            className='border border-[#121212] mb-[2rem] p-3'
-          >
-            <input
-              type='email'
-              placeholder='Email'
-              name='email'
-              className='outline-none w-max lg:w-full'
-            />
-          </label>
-        </form>
-      </section>
-      <hr />
     </>
   )
 }
