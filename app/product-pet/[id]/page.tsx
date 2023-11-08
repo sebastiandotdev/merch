@@ -4,7 +4,7 @@ import Link from 'next/link'
 import supabase from '../../../lib/supabase'
 import { Data, Param } from '../../../lib/types'
 
-export default async function ProductByTitle({ params }: Param) {
+export default async function ProductById({ params }: Param) {
   const funcGetByName = async () => {
     try {
       const { data, error } = await supabase
