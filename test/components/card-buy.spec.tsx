@@ -62,7 +62,7 @@ test('should have atributtes href', () => {
     />,
   )
   const cardLinkBuy = screen.queryByRole('link') as HTMLLinkElement
-  expect(cardLinkBuy.href).toContain('#')
+  expect(cardLinkBuy.href).toContain('product-pet')
   expect(cardLinkBuy.href).toBeDefined()
 })
 
