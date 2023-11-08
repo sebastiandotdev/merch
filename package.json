@@ -15,7 +15,7 @@
     "workflows": "pnpm run lint && pnpm run fmt.check && pnpm run test",
     "fmt.check": "prettier . --check",
     "test.coverage": "vitest --run --coverage",
-    "test.dev": "vitest --dev",
+    "test.dev": "vitest",
     "test.ui": "vitest --ui",
     "build": "next build",
     "clean": "rimraf .next && rimraf node_modules && pnpm install",
