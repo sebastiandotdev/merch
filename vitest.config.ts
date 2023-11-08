@@ -7,7 +7,6 @@ export default defineConfig({
     coverage: {
       reporter: ['html', 'text', 'json'],
     },
-    ui: true,
     environment: 'happy-dom',
     globals: true,
   },
