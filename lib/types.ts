@@ -5,3 +5,7 @@ export type Data = {
   price: number
   photo: string
 }
+
+type ParamValue = { id: number }
+
+export type Param = { params: ParamValue }
