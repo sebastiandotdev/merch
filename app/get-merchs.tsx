@@ -26,6 +26,7 @@ export default function GetMerchs() {
       {merchs?.map((merch) => (
         <CardBuy
           key={merch.id}
+          id={merch.id}
           name={merch.title}
           image={merch.photo}
           price={merch.price}
