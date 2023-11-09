@@ -1,29 +1,24 @@
-'use client'
-
-import { Fragment, useEffect, useState } from 'react'
 import { Data } from '../lib/types'
 import CardBuy from '../components/card-buy'
-import { createClientComponentClient } from '@supabase/auth-helpers-nextjs'
+import supabase from '../lib/supabase'
+import { Suspense } from 'react'
+import Loading from './loading'
 
-export default function GetMerchs() {
-  const supabase = createClientComponentClient()
+export default async function GetMerchs() {
+  const getMerchs = async () => {
+    try {
+      const { data } = await supabase.from('merch').select('*')
 
-  const [merchs, setMerchs] = useState<Data[] | null>([])
-  useEffect(() => {
-    const getMerchs = async () => {
-      try {
-        const { data } = await supabase.from('merch').select('*')
-        setMerchs(data)
-      } catch (error) {
-        console.error('Error fetching data:', error)
-        throw error
-      }
+      return data
+    } catch (error) {
+      console.error('Error fetching data:', error)
+      throw error
     }
-    getMerchs()
-  }, [])
+  }
+  const merchs = (await getMerchs()) as Data[]
   return (
-    <Fragment>
-      {merchs?.map((merch) => (
+    <Suspense fallback={<Loading />}>
+      {merchs.map((merch) => (
         <CardBuy
           key={merch.id}
           id={merch.id}
@@ -33,6 +28,6 @@ export default function GetMerchs() {
           description={merch.description}
         />
       ))}
-    </Fragment>
+    </Suspense>
   )
 }
