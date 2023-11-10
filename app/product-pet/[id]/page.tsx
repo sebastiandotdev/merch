@@ -67,6 +67,11 @@ export default async function ProductById({ params }: Param) {
                 value='Buy it now'
                 className='py-3 bg-gray-400 block w-full mt-4 text-white font-amiko cursor-pointer'
               />
+              <input
+                type='button'
+                value='Add to cart'
+                className='py-3 bg-blue-500 block w-full mt-4 text-white font-amiko cursor-pointer'
+              />
             </div>
           </aside>
         </section>
