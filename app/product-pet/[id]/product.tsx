@@ -6,13 +6,22 @@ import { Data } from '../../../lib/types'
 import { useState } from 'react'
 
 export default function Product({ product }: { product: Data }) {
-  const [increment, setIncrement] = useState<number>(product.price)
+  const [increment, setIncrement] = useState({
+    incrementPrice: product.price,
+    incrementProduct: 1,
+  })
 
   const incrementPrice = () => {
-    setIncrement((prevIncrement) => prevIncrement + product.price)
+    setIncrement({
+      incrementPrice: increment.incrementPrice + product.price,
+      incrementProduct: increment.incrementProduct + 1,
+    })
   }
   const decrementPrice = () => {
-    setIncrement((prevIncrement) => prevIncrement - product.price)
+    setIncrement({
+      incrementPrice: increment.incrementPrice - product.price,
+      incrementProduct: increment.incrementProduct - 1,
+    })
   }
   return (
     <>
@@ -29,16 +38,20 @@ export default function Product({ product }: { product: Data }) {
         <h5 className='uppercase text-gray-400 font-amiko'>Pet land</h5>
         <h2 className='uppercase font-amiko text-4xl pt-4'>{product.title}</h2>
 
-        <p className='font-amiko uppercase text-2xl py-6'>$ {increment} COP</p>
+        <p className='font-amiko uppercase text-2xl py-6'>
+          $ {increment.incrementPrice} COP
+        </p>
         <div className='border border-black p-2 flex items-center justify-between max-w-[10rem]'>
           <button
             className='text-xl cursor-pointer'
             onClick={decrementPrice}
-            disabled={increment === product.price}
+            disabled={increment.incrementPrice === product.price}
           >
             <Minus />
           </button>
-          <small className='font-amiko text-xl uppercase'>1</small>
+          <small className='font-amiko text-xl uppercase'>
+            {increment.incrementProduct}
+          </small>
           <button className='text-xl cursor-pointer' onClick={incrementPrice}>
             <Add />
           </button>
