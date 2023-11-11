@@ -27,7 +27,7 @@ export default async function ProductById({ params }: Param) {
           className='w-11/12 max-w-5xl mx-auto pt-16 grid grid-cols-2 gap-x-6 relative'
           key={product.id}
         >
-         <Product product={product}/>
+          <Product product={product} />
         </section>
       ))}
     </>
