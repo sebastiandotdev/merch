@@ -10,6 +10,7 @@ export default function Product({ product }: { product: Data }) {
     incrementPrice: product.price,
     incrementProduct: 1,
   })
+  const [products, setProducts] = useState<Data[]>([])
 
   const incrementPrice = () => {
     setIncrement({
@@ -22,6 +23,14 @@ export default function Product({ product }: { product: Data }) {
       incrementPrice: increment.incrementPrice - product.price,
       incrementProduct: increment.incrementProduct - 1,
     })
+  }
+  const addShoppingCart = () => {
+    const existingProducts = JSON.parse(
+      localStorage.getItem('products') || '[]',
+    )
+    existingProducts.push(product)
+    localStorage.setItem('products', JSON.stringify(existingProducts))
+    setProducts(existingProducts)
   }
   return (
     <>
@@ -66,6 +75,7 @@ export default function Product({ product }: { product: Data }) {
             type='button'
             value='Add to cart'
             className='py-3 bg-blue-500 block w-full mt-4 text-white font-amiko cursor-pointer hover:opacity-90'
+            onClick={addShoppingCart}
           />
         </div>
       </aside>
