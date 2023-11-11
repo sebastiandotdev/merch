@@ -4,40 +4,16 @@ import { Fragment } from 'react'
 import { Dialog, Transition } from '@headlessui/react'
 import { CloseModal } from './icons'
 import Image from 'next/image'
-import exampleImage from '../public/example-photo.jpg'
 import Link from 'next/link'
+import { Data } from '../lib/types'
 
 type PanelBuyProps = {
   open: boolean
   setOpen: (open: boolean) => void
+  products: Data[]
 }
 
-const products = [
-  {
-    id: 1,
-    name: 'Throwback Hip Bag',
-    href: '#',
-    color: 'Salmon',
-    price: '$90.00',
-    quantity: 1,
-    imageSrc: exampleImage,
-    imageAlt:
-      'Salmon orange fabric pouch with match zipper, gray zipper pull, and adjustable hip belt.',
-  },
-  {
-    id: 2,
-    name: 'Medium Stuff Satchel',
-    href: '#',
-    color: 'Blue',
-    price: '$32.00',
-    quantity: 1,
-    imageSrc: exampleImage,
-    imageAlt:
-      'Front of satchel with blue canvas body, black straps and handle, drawstring top, and front zipper pouch.',
-  },
-]
-
-export default function PanelBuy({ open, setOpen }: PanelBuyProps) {
+export default function PanelBuy({ open, setOpen, products }: PanelBuyProps) {
   return (
     <Transition.Root show={open} as={Fragment}>
       <Dialog as='div' className='relative z-10' onClose={setOpen}>
@@ -95,8 +71,8 @@ export default function PanelBuy({ open, setOpen }: PanelBuyProps) {
                               <li key={product.id} className='flex py-6'>
                                 <div className='h-24 w-24 flex-shrink-0 overflow-hidden rounded-md border border-gray-200'>
                                   <Image
-                                    src={product.imageSrc}
-                                    alt={product.imageAlt}
+                                    src={product.photo}
+                                    alt={product.title}
                                     className='h-full w-full object-cover object-center'
                                     width={200}
                                     height={200}
@@ -107,22 +83,18 @@ export default function PanelBuy({ open, setOpen }: PanelBuyProps) {
                                   <div>
                                     <div className='flex justify-between text-base font-medium text-gray-900'>
                                       <h3 className='font-amiko'>
-                                        <Link href={product.href}>
-                                          {product.name}
-                                        </Link>
+                                        <Link href='#'>{product.title}</Link>
                                       </h3>
                                       <p className='ml-4 font-amiko'>
                                         {product.price}
                                       </p>
                                     </div>
                                     <p className='mt-1 text-sm text-gray-500 font-amiko'>
-                                      {product.color}
+                                      {product.description}
                                     </p>
                                   </div>
                                   <div className='flex flex-1 items-end justify-between text-sm'>
-                                    <p className='text-gray-500'>
-                                      Qty {product.quantity}
-                                    </p>
+                                    <p className='text-gray-500'>Qty 1</p>
 
                                     <div className='flex'>
                                       <button
@@ -144,7 +116,15 @@ export default function PanelBuy({ open, setOpen }: PanelBuyProps) {
                     <div className='border-t border-gray-200 px-4 py-6 sm:px-6'>
                       <div className='flex justify-between text-base font-medium text-gray-900'>
                         <p className='font-amiko'>Subtotal</p>
-                        <p className='font-amiko'>$262.00</p>
+
+                        {products.length > 0 && (
+                          <p className='font-amiko'>
+                            {products.reduce(
+                              (acc, product) => acc + product.price,
+                              0,
+                            )}
+                          </p>
+                        )}
                       </div>
                       <p className='mt-0.5 text-sm text-gray-500 font-amiko'>
                         Shipping and taxes calculated at checkout.
