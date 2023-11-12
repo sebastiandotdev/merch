@@ -14,6 +14,9 @@ type PanelBuyProps = {
 }
 
 export default function PanelBuy({ open, setOpen, products }: PanelBuyProps) {
+  const onClearShoppingCart = () => {
+    localStorage.removeItem('products')
+  }
   return (
     <Transition.Root show={open} as={Fragment}>
       <Dialog as='div' className='relative z-10' onClose={setOpen}>
@@ -86,7 +89,7 @@ export default function PanelBuy({ open, setOpen, products }: PanelBuyProps) {
                                         <Link href='#'>{product.title}</Link>
                                       </h3>
                                       <p className='ml-4 font-amiko'>
-                                        {product.price}
+                                        {product.incrementPrice}
                                       </p>
                                     </div>
                                     <p className='mt-1 text-sm text-gray-500 font-amiko'>
@@ -94,7 +97,9 @@ export default function PanelBuy({ open, setOpen, products }: PanelBuyProps) {
                                     </p>
                                   </div>
                                   <div className='flex flex-1 items-end justify-between text-sm'>
-                                    <p className='text-gray-500'>Qty 1</p>
+                                    <p className='text-gray-500'>
+                                      Qty {product.incrementProduct}
+                                    </p>
 
                                     <div className='flex'>
                                       <button
@@ -120,7 +125,7 @@ export default function PanelBuy({ open, setOpen, products }: PanelBuyProps) {
                         {products.length > 0 && (
                           <p className='font-amiko'>
                             {products.reduce(
-                              (acc, product) => acc + product.price,
+                              (acc, product) => acc + product.incrementPrice,
                               0,
                             )}
                           </p>
@@ -143,9 +148,9 @@ export default function PanelBuy({ open, setOpen, products }: PanelBuyProps) {
                           <button
                             type='button'
                             className='font-medium text-zinc-600 hover:text-zinc-500'
-                            onClick={() => setOpen(false)}
+                            onClick={onClearShoppingCart}
                           >
-                            Continue Shopping
+                            Vaciar carrito
                             <span aria-hidden='true'> &rarr;</span>
                           </button>
                         </p>
