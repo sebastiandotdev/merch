@@ -4,6 +4,8 @@ export type Data = {
   description: string
   price: number
   photo: string
+  incrementPrice: number
+  incrementProduct: number
 }
 
 type ParamValue = { id: number }
