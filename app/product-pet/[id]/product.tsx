@@ -10,7 +10,6 @@ export default function Product({ product }: { product: Data }) {
     incrementPrice: product.price,
     incrementProduct: 1,
   })
-  const [products, setProducts] = useState<Data[]>([])
 
   const incrementPrice = () => {
     setIncrement({
@@ -28,9 +27,8 @@ export default function Product({ product }: { product: Data }) {
     const existingProducts = JSON.parse(
       localStorage.getItem('products') || '[]',
     )
-    existingProducts.push(product)
+    existingProducts.push({ ...product, ...increment })
     localStorage.setItem('products', JSON.stringify(existingProducts))
-    setProducts(existingProducts)
   }
   return (
     <>
