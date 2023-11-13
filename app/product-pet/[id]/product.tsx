@@ -3,12 +3,19 @@
 import Image from 'next/image'
 import { Add, Minus } from '../../../components/icons'
 import { Data } from '../../../lib/types'
-import { useState } from 'react'
+import { useEffect, useState } from 'react'
+import Messsage from '../../../components/message'
 
 export default function Product({ product }: { product: Data }) {
   const [increment, setIncrement] = useState({
     incrementPrice: product.price,
     incrementProduct: 1,
+  })
+  const [isSave, setIsSave] = useState(false)
+  const [isSuccessfuly, setIsSuccesfuly] = useState(false)
+  const [messages, setMessage] = useState({
+    message: '',
+    description: '',
   })
 
   const incrementPrice = () => {
@@ -18,18 +25,43 @@ export default function Product({ product }: { product: Data }) {
     })
   }
   const decrementPrice = () => {
-    setIncrement({
-      incrementPrice: increment.incrementPrice - product.price,
-      incrementProduct: increment.incrementProduct - 1,
-    })
+    if (increment.incrementPrice > product.price) {
+      setIncrement({
+        incrementPrice: increment.incrementPrice - product.price,
+        incrementProduct: increment.incrementProduct - 1,
+      })
+    }
   }
   const addShoppingCart = () => {
     const existingProducts = JSON.parse(
       localStorage.getItem('products') || '[]',
+    ) as Data[]
+
+    const productExists = existingProducts.some(
+      (p: Data) => p.id === product.id,
     )
-    existingProducts.push({ ...product, ...increment })
-    localStorage.setItem('products', JSON.stringify(existingProducts))
+
+    if (!productExists) {
+      existingProducts.push({ ...product, ...increment })
+      localStorage.setItem('products', JSON.stringify(existingProducts))
+
+      setMessage({
+        message: 'Successfully added',
+        description: 'The product has been added to the cart',
+      })
+      setIsSuccesfuly(true)
+      setIsSave(true)
+    }
   }
+  useEffect(() => {
+    const existingProducts = JSON.parse(
+      localStorage.getItem('products') || '[]',
+    ) as Data[]
+    const productExists = existingProducts.some(
+      (p: Data) => p.id === product.id,
+    )
+    setIsSave(productExists)
+  }, [product.id, isSave])
   return (
     <>
       <figure className='overflow-hidden py-4'>
@@ -52,6 +84,14 @@ export default function Product({ product }: { product: Data }) {
           <button
             className='text-xl cursor-pointer'
             onClick={decrementPrice}
+            style={{
+              color:
+                increment.incrementPrice === product.price ? '#ccc' : '#000',
+              cursor:
+                increment.incrementPrice === product.price
+                  ? 'not-allowed'
+                  : 'pointer',
+            }}
             disabled={increment.incrementPrice === product.price}
           >
             <Minus />
@@ -73,10 +113,24 @@ export default function Product({ product }: { product: Data }) {
             type='button'
             value='Add to cart'
             className='py-3 bg-blue-500 block w-full mt-4 text-white font-amiko cursor-pointer hover:opacity-90'
+            style={{
+              backgroundColor: isSave ? '#ccc' : '#3b82f6',
+              cursor: isSave ? 'not-allowed' : 'pointer',
+            }}
             onClick={addShoppingCart}
+            disabled={isSave}
           />
         </div>
       </aside>
+
+      {isSuccessfuly ? (
+        <Messsage
+          message={messages.message}
+          description={messages.description}
+        />
+      ) : (
+        ''
+      )}
     </>
   )
 }
