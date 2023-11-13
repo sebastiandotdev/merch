@@ -7,12 +7,16 @@ import PanelBuy from './panel-buy'
 export default function Cart() {
   const [openPanel, setOpenPanel] = useState(false)
   const [productsLocal, setProductsLocal] = useState([])
-
-  useEffect(() => {
+  const updateProducts = () => {
     const products = localStorage.getItem('products')
     if (products) {
       setProductsLocal(JSON.parse(products))
     }
+  }
+  useEffect(() => {
+    updateProducts()
+    window.addEventListener('storage', updateProducts)
+    return () => window.removeEventListener('storage', updateProducts)
   }, [])
   return (
     <div role='tooltip'>

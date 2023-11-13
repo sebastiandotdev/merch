@@ -1,6 +1,6 @@
 'use client'
 
-import { Fragment, useState } from 'react'
+import { Fragment, useEffect, useState } from 'react'
 import { Dialog, Transition } from '@headlessui/react'
 import { CloseModal } from './icons'
 import Image from 'next/image'
@@ -23,6 +23,11 @@ export default function PanelBuy({ open, setOpen, products }: PanelBuyProps) {
       description: 'The product has been removed to the cart',
     })
   }
+  useEffect(() => {
+    window.addEventListener('storage', onClearShoppingCart)
+    return () => window.removeEventListener('storage', onClearShoppingCart)
+  })
+
   return (
     <Transition.Root show={open} as={Fragment}>
       <Dialog as='div' className='relative z-10' onClose={setOpen}>
