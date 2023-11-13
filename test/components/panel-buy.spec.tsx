@@ -9,6 +9,8 @@ const products: Data[] = [
     photo: '/assets/dog.jpg',
     price: 100,
     description: 'Lorem ipsum dolor sit amet consectetur adipisicing elit.',
+    incrementPrice: 0,
+    incrementProduct: 0,
   },
   {
     id: 2,
@@ -16,6 +18,8 @@ const products: Data[] = [
     photo: '/assets/cat.jpg',
     price: 200,
     description: 'Lorem ipsum dolor sit amet consectetur adipisicing elit.',
+    incrementPrice: 0,
+    incrementProduct: 0,
   },
 ]
 test('render title panel component', () => {
