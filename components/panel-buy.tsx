@@ -1,21 +1,27 @@
 'use client'
 
-import { Fragment } from 'react'
+import { Fragment, useState } from 'react'
 import { Dialog, Transition } from '@headlessui/react'
 import { CloseModal } from './icons'
 import Image from 'next/image'
 import Link from 'next/link'
-import { Data } from '../lib/types'
-
-type PanelBuyProps = {
-  open: boolean
-  setOpen: (open: boolean) => void
-  products: Data[]
-}
+import { PanelBuyProps } from '../lib/types'
+import Messsage from './message'
 
 export default function PanelBuy({ open, setOpen, products }: PanelBuyProps) {
+  const [messages, setMessages] = useState({
+    message: '',
+    description: '',
+  })
+  const [isClear, setIsClear] = useState(false)
+
   const onClearShoppingCart = () => {
     localStorage.removeItem('products')
+    setIsClear(true)
+    setMessages({
+      message: 'Successfully removed',
+      description: 'The product has been removed to the cart',
+    })
   }
   return (
     <Transition.Root show={open} as={Fragment}>
@@ -144,7 +150,6 @@ export default function PanelBuy({ open, setOpen, products }: PanelBuyProps) {
                       </div>
                       <div className='mt-6 flex justify-center text-center text-sm text-gray-500'>
                         <p className='font-amiko'>
-                          or{' '}
                           <button
                             type='button'
                             className='font-medium text-zinc-600 hover:text-zinc-500'
@@ -156,6 +161,14 @@ export default function PanelBuy({ open, setOpen, products }: PanelBuyProps) {
                         </p>
                       </div>
                     </div>
+                    {isClear ? (
+                      <Messsage
+                        message={messages.message}
+                        description={messages.description}
+                      />
+                    ) : (
+                      ''
+                    )}
                   </div>
                 </Dialog.Panel>
               </Transition.Child>
