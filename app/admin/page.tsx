@@ -4,10 +4,16 @@ import { FormEvent, useState } from 'react'
 import supabase from '../../lib/supabase'
 import { v4 as uuidv4 } from 'uuid'
 import Loading from '../loading'
+import Messsage from '../../components/message'
 
 export default function AdminPage() {
   const [image, setImage] = useState<File | null>(null)
   const [loadingAdmin, setLoadingAdmin] = useState(false)
+  const [isSave, setIsSave] = useState(false)
+  const [messages, setMessage] = useState({
+    message: '',
+    description: '',
+  })
 
   const onImageChange = (e: FormEvent<HTMLInputElement>) => {
     const files = e.currentTarget.files
@@ -53,6 +59,11 @@ export default function AdminPage() {
         ])
         .select('*')
       ;(e.target as HTMLFormElement).reset()
+      setIsSave(true)
+      setMessage({
+        message: 'Successfully added',
+        description: 'Product added successfully to the list of product',
+      })
     } catch (error) {
       console.log(error)
     } finally {
@@ -124,6 +135,14 @@ export default function AdminPage() {
             className='bg-black text-white py-3 px-[3rem] min-h-[calc(4.5rem + 1px * 2)] hover:cursor-pointer hover:opacity-90'
           />
         </form>
+      )}
+      {isSave ? (
+        <Messsage
+          message={messages.message}
+          description={messages.description}
+        />
+      ) : (
+        ''
       )}
     </section>
   )
