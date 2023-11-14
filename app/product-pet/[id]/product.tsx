@@ -5,18 +5,15 @@ import { Add, Minus } from '../../../components/icons'
 import { Data } from '../../../lib/types'
 import { useEffect, useState } from 'react'
 import Messsage from '../../../components/message'
+import { useCart } from '../../Provider'
 
 export default function Product({ product }: { product: Data }) {
   const [increment, setIncrement] = useState({
     incrementPrice: product.price,
     incrementProduct: 1,
   })
-  const [isSave, setIsSave] = useState(false)
-  const [isSuccessfuly, setIsSuccesfuly] = useState(false)
-  const [messages, setMessage] = useState({
-    message: '',
-    description: '',
-  })
+  const { addProduct, isSave, isSuccessfuly, messages, setIsSave, cart } =
+    useCart()
 
   const incrementPrice = () => {
     setIncrement({
@@ -32,36 +29,13 @@ export default function Product({ product }: { product: Data }) {
       })
     }
   }
-  const addShoppingCart = () => {
-    const existingProducts = JSON.parse(
-      localStorage.getItem('products') || '[]',
-    ) as Data[]
-
-    const productExists = existingProducts.some(
-      (p: Data) => p.id === product.id,
-    )
-
-    if (!productExists) {
-      existingProducts.push({ ...product, ...increment })
-      localStorage.setItem('products', JSON.stringify(existingProducts))
-
-      setMessage({
-        message: 'Successfully added',
-        description: 'The product has been added to the cart',
-      })
-      setIsSuccesfuly(true)
-      setIsSave(true)
-    }
-  }
   useEffect(() => {
-    const existingProducts = JSON.parse(
-      localStorage.getItem('products') || '[]',
-    ) as Data[]
-    const productExists = existingProducts.some(
-      (p: Data) => p.id === product.id,
-    )
-    setIsSave(productExists)
-  }, [product.id, isSave])
+    setIsSave(isProductInCart(product.id))
+  }, [product.id, cart])
+
+  const isProductInCart = (productId: number): boolean => {
+    return cart.some((p) => p.id === productId)
+  }
   return (
     <>
       <figure className='overflow-hidden py-4'>
@@ -117,7 +91,7 @@ export default function Product({ product }: { product: Data }) {
               backgroundColor: isSave ? '#ccc' : '#3b82f6',
               cursor: isSave ? 'not-allowed' : 'pointer',
             }}
-            onClick={addShoppingCart}
+            onClick={() => addProduct(product, increment)}
             disabled={isSave}
           />
         </div>
