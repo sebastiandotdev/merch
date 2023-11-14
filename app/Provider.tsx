@@ -1,17 +1,45 @@
 'use client'
-import { ReactNode, createContext, useContext, useState } from 'react'
+import {
+  Dispatch,
+  ReactNode,
+  SetStateAction,
+  createContext,
+  useContext,
+  useEffect,
+  useState,
+} from 'react'
 import { Data } from '../lib/types'
+
+type Increment = { incrementPrice: number; incrementProduct: number }
 
 type CartContextType = {
   cart: Data[]
-  addProduct: (product: Data) => void
-  removeProduct: (productId: string) => void
+  addProduct: (product: Data, increment: Increment) => void
+  removeProduct: (productId: number) => void
+  setIsSave: Dispatch<SetStateAction<boolean>>
+  clearLocalStorage: () => void
+  messages: {
+    message: string
+    description: string
+  }
+  isSave: boolean
+  isSuccessfuly: boolean
+  isClear: boolean
 }
 
 const initialCartContext: CartContextType = {
   cart: [],
   addProduct: () => {},
   removeProduct: () => {},
+  clearLocalStorage: () => {},
+  setIsSave: () => {},
+  messages: {
+    message: '',
+    description: '',
+  },
+  isSave: false,
+  isSuccessfuly: false,
+  isClear: false,
 }
 const Context = createContext<CartContextType>(initialCartContext)
 
@@ -25,17 +53,84 @@ const useCart = () => {
 
 function CartContext({ children }: { children: ReactNode }) {
   const [cart, setCart] = useState<Data[]>([])
+  const [messages, setMessage] = useState({
+    message: '',
+    description: '',
+  })
+  const [isSave, setIsSave] = useState(false)
+  const [isSuccessfuly, setIsSuccesfuly] = useState(false)
+  const [isClear, setIsClear] = useState(false)
 
-  const addProduct = (product: Data) => {}
+  const addProduct = (product: Data, increment: Increment) => {
+    const existingProducts = JSON.parse(
+      localStorage.getItem('products') || '[]',
+    ) as Data[]
 
-  const removeProduct = (productId: string) => {}
+    const productExists = existingProducts.some(
+      (p: Data) => p.id === product.id,
+    )
+    if (!productExists) {
+      existingProducts.push({ ...product, ...increment })
+      localStorage.setItem('products', JSON.stringify(existingProducts))
+      setCart(existingProducts)
+
+      setMessage({
+        message: 'Successfully added',
+        description: 'The product has been added to the cart',
+      })
+      setIsSuccesfuly(true)
+      setIsSave(true)
+    }
+  }
+  useEffect(() => {
+    const existingProducts = JSON.parse(
+      localStorage.getItem('products') || '[]',
+    ) as Data[]
+    setCart(existingProducts)
+  }, [isClear])
+
+  const removeProduct = (productId: number) => {
+    const existingProducts = JSON.parse(
+      localStorage.getItem('products') || '[]',
+    ) as Data[]
+
+    const productExists = existingProducts.some((p: Data) => p.id === productId)
+    if (productExists) {
+      const newProducts = existingProducts.filter(
+        (p: Data) => p.id !== productId,
+      )
+      localStorage.setItem('products', JSON.stringify(newProducts))
+      setCart(newProducts)
+      setMessage({
+        message: 'Successfully removed',
+        description: 'The product has been removed from the cart',
+      })
+      setIsSuccesfuly(true)
+      setIsSave(true)
+    }
+  }
+
+  const clearLocalStorage = () => {
+    localStorage.removeItem('products')
+    setMessage({
+      message: 'Successfully removed',
+      description: 'The product has been removed from the cart',
+    })
+    setIsClear(true)
+  }
 
   return (
     <Context.Provider
       value={{
         cart,
+        messages,
+        isSave,
+        isSuccessfuly,
+        isClear,
         addProduct,
         removeProduct,
+        setIsSave,
+        clearLocalStorage,
       }}
     >
       {children}
