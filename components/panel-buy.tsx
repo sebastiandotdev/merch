@@ -7,26 +7,10 @@ import Image from 'next/image'
 import Link from 'next/link'
 import { PanelBuyProps } from '../lib/types'
 import Messsage from './message'
+import { useCart } from '../app/Provider'
 
 export default function PanelBuy({ open, setOpen, products }: PanelBuyProps) {
-  const [messages, setMessages] = useState({
-    message: '',
-    description: '',
-  })
-  const [isClear, setIsClear] = useState(false)
-
-  const onClearShoppingCart = () => {
-    localStorage.removeItem('products')
-    setIsClear(true)
-    setMessages({
-      message: 'Successfully removed',
-      description: 'The product has been removed to the cart',
-    })
-  }
-  useEffect(() => {
-    window.addEventListener('storage', onClearShoppingCart)
-    return () => window.removeEventListener('storage', onClearShoppingCart)
-  })
+  const { clearLocalStorage, messages, isClear, removeProduct } = useCart()
 
   return (
     <Transition.Root show={open} as={Fragment}>
@@ -116,6 +100,9 @@ export default function PanelBuy({ open, setOpen, products }: PanelBuyProps) {
                                       <button
                                         type='button'
                                         className='font-medium font-amiko hover:text-red-500'
+                                        onClick={() =>
+                                          removeProduct(product.id)
+                                        }
                                       >
                                         Remove
                                       </button>
@@ -158,7 +145,7 @@ export default function PanelBuy({ open, setOpen, products }: PanelBuyProps) {
                           <button
                             type='button'
                             className='font-medium text-zinc-600 hover:text-zinc-500'
-                            onClick={onClearShoppingCart}
+                            onClick={clearLocalStorage}
                           >
                             Vaciar carrito
                             <span aria-hidden='true'> &rarr;</span>
