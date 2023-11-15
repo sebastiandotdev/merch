@@ -1,14 +1,14 @@
 import { NextResponse } from 'next/server'
 import type { NextRequest } from 'next/server'
-
-export async function middleware(request: NextRequest) {
-  const isAdmin = false
-  if (isAdmin) {
-    console.log('LOGIN')
-  }
-  return NextResponse.redirect('/login')
+ 
+// This function can be marked `async` if using `await` inside
+export function middleware(request: NextRequest) {
+  console.log('middleware')
+  
+  return NextResponse.redirect(new URL('/', request.url))
 }
-
+ 
+// See "Matching Paths" below to learn more
 export const config = {
-  matcher: ['/admin'],
+  matcher: '/admin/:path',
 }
