@@ -2,8 +2,8 @@
 
 import { Dialog, Transition } from '@headlessui/react'
 import { Fragment, useState } from 'react'
+import { Messageprops } from '../lib/types'
 
-type Messageprops = { message: string; description: string }
 export default function Messsage({ message, description }: Messageprops) {
   let [isOpen, setIsOpen] = useState(true)
 
