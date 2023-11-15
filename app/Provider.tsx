@@ -1,31 +1,7 @@
 'use client'
-import {
-  Dispatch,
-  ReactNode,
-  SetStateAction,
-  createContext,
-  useContext,
-  useEffect,
-  useState,
-} from 'react'
-import { Data } from '../lib/types'
 
-type Increment = { incrementPrice: number; incrementProduct: number }
-
-type CartContextType = {
-  cart: Data[]
-  addProduct: (product: Data, increment: Increment) => void
-  removeProduct: (productId: number) => void
-  setIsSave: Dispatch<SetStateAction<boolean>>
-  clearLocalStorage: () => void
-  messages: {
-    message: string
-    description: string
-  }
-  isSave: boolean
-  isSuccessfuly: boolean
-  isClear: boolean
-}
+import { createContext, useContext, useEffect, useState } from 'react'
+import { CartContextType, Children, Data, Increment } from '../lib/types'
 
 const initialCartContext: CartContextType = {
   cart: [],
@@ -51,7 +27,7 @@ const useCart = () => {
   return context
 }
 
-function CartContext({ children }: { children: ReactNode }) {
+function CartContext({ children }: Children) {
   const [cart, setCart] = useState<Data[]>([])
   const [messages, setMessage] = useState({
     message: '',
