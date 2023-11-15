@@ -15,7 +15,14 @@ export type PanelBuyProps = {
   setOpen: (open: boolean) => void
   products: Data[]
 }
-
+export type CardBuyProps = {
+  id: number
+  name: string
+  price: number
+  image: string
+  description: string
+}
+export type Messageprops = { message: string; description: string }
 type ParamValue = { id: number }
 
 export type Increment = { incrementPrice: number; incrementProduct: number }

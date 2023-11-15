@@ -1,14 +1,8 @@
 import Image from 'next/image'
 import Link from 'next/link'
 import { IconCart } from './icons'
+import { CardBuyProps } from '../lib/types'
 
-type CardBuyProps = {
-  id: number
-  name: string
-  price: number
-  image: string
-  description: string
-}
 export default function CardBuy({
   id,
   name,
