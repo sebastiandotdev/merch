@@ -36,6 +36,7 @@ function CartContext({ children }: Children) {
   const [isSave, setIsSave] = useState(false)
   const [isSuccessfuly, setIsSuccesfuly] = useState(false)
   const [isClear, setIsClear] = useState(false)
+  const [localStorageProducts, setLocalStorageProducts] = useState<Data[]>([])
 
   const addProduct = (product: Data, increment: Increment) => {
     const existingProducts = JSON.parse(
@@ -56,6 +57,7 @@ function CartContext({ children }: Children) {
       })
       setIsSuccesfuly(true)
       setIsSave(true)
+      setLocalStorageProducts(existingProducts)
     }
   }
   useEffect(() => {
@@ -63,7 +65,7 @@ function CartContext({ children }: Children) {
       localStorage.getItem('products') || '[]',
     ) as Data[]
     setCart(existingProducts)
-  }, [isClear])
+  }, [localStorageProducts])
 
   const removeProduct = (productId: number) => {
     const existingProducts = JSON.parse(
@@ -83,6 +85,7 @@ function CartContext({ children }: Children) {
       })
       setIsSuccesfuly(true)
       setIsSave(true)
+      setLocalStorageProducts(newProducts)
     }
   }
 
