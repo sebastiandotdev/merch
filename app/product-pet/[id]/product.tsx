@@ -4,7 +4,6 @@ import Image from 'next/image'
 import { Add, Minus } from '../../../components/icons'
 import { Data } from '../../../lib/types'
 import { useEffect, useState } from 'react'
-import Messsage from '../../../components/message'
 import { useCart } from '../../Provider'
 
 export default function Product({ product }: { product: Data }) {
@@ -12,8 +11,7 @@ export default function Product({ product }: { product: Data }) {
     incrementPrice: product.price,
     incrementProduct: 1,
   })
-  const { addProduct, isSave, isSuccessfuly, messages, setIsSave, cart } =
-    useCart()
+  const { addProduct, isSave, setIsSave, cart } = useCart()
 
   const incrementPrice = () => {
     setIncrement({
@@ -96,15 +94,6 @@ export default function Product({ product }: { product: Data }) {
           />
         </div>
       </aside>
-
-      {isSuccessfuly ? (
-        <Messsage
-          message={messages.message}
-          description={messages.description}
-        />
-      ) : (
-        ''
-      )}
     </>
   )
 }

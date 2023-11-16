@@ -6,11 +6,10 @@ import { CloseModal } from './icons'
 import Image from 'next/image'
 import Link from 'next/link'
 import { PanelBuyProps } from '../lib/types'
-import Messsage from './message'
 import { useCart } from '../app/Provider'
 
 export default function PanelBuy({ open, setOpen, products }: PanelBuyProps) {
-  const { clearLocalStorage, messages, isClear, removeProduct } = useCart()
+  const { clearLocalStorage, removeProduct } = useCart()
 
   return (
     <Transition.Root show={open} as={Fragment}>
@@ -153,14 +152,6 @@ export default function PanelBuy({ open, setOpen, products }: PanelBuyProps) {
                         </p>
                       </div>
                     </div>
-                    {isClear ? (
-                      <Messsage
-                        message={messages.message}
-                        description={messages.description}
-                      />
-                    ) : (
-                      ''
-                    )}
                   </div>
                 </Dialog.Panel>
               </Transition.Child>
