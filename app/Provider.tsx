@@ -65,7 +65,7 @@ function CartContext({ children }: Children) {
       localStorage.getItem('products') || '[]',
     ) as Data[]
     setCart(existingProducts)
-  }, [localStorageProducts, isClear])
+  }, [localStorageProducts])
 
   const removeProduct = (productId: number) => {
     const existingProducts = JSON.parse(
