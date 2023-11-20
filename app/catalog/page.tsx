@@ -12,11 +12,18 @@ export default async function PageCatalog() {
           <h5 className='font-amiko text-md text-zinc-600'>Filter: </h5>
         </nav>
         <nav className='flex items-center gap-x-4'>
-          <select name="#" id="#" className='outline-none -mt-2 border-none rounded-md'>
-          <optgroup label="Sort By" className='font-amiko font-light border-none outline-none'>
-        <option value="opcion1">Alphabetically, A-Z</option>
-      <option value="opcion2">Alphabetically, Z-A</option>
-  </optgroup>
+          <select
+            name='#'
+            id='#'
+            className='outline-none -mt-2 border-none rounded-md'
+          >
+            <optgroup
+              label='Sort By'
+              className='font-amiko font-light border-none outline-none'
+            >
+              <option value='opcion1'>Alphabetically, A-Z</option>
+              <option value='opcion2'>Alphabetically, Z-A</option>
+            </optgroup>
           </select>
           <small className='font-amiko text-md text-zinc-600'>
             {merchs.length > 0 ? merchs.length : 0} products

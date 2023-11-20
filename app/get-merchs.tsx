@@ -5,7 +5,6 @@ import Loading from './loading'
 import { getMerchs } from '../lib/utils'
 
 export default async function GetMerchs() {
-
   const merchs = (await getMerchs()) as Data[]
   return (
     <Suspense fallback={<Loading />}>
