@@ -19,8 +19,8 @@ export default function CardBuy({
         <Image
           src={image}
           alt='example'
-          width={400}
-          height={400}
+          width={401}
+          height={401}
           className='h-full w-full object-cover object-center lg:h-full lg:w-full'
         />
       </header>
