@@ -2,7 +2,18 @@ import { Data } from '../lib/types'
 import CardBuy from '../components/card-buy'
 import { Suspense } from 'react'
 import Loading from './loading'
-import { getMerchs } from '../lib/utils'
+import supabase from '../lib/supabase'
+
+const getMerchs = async () => {
+  try {
+    const { data } = await supabase.from('merch').select('*')
+
+    return data
+  } catch (error) {
+    console.error('Error fetching data:', error)
+    throw error
+  }
+}
 
 export default async function GetMerchs() {
   const merchs = (await getMerchs()) as Data[]

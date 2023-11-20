@@ -1,8 +1,20 @@
+import supabase from '../../lib/supabase'
 import { Data } from '../../lib/types'
-import { getMerchs } from '../../lib/utils'
+
 import GetMerchs from '../get-merchs'
 
 export default async function PageCatalog() {
+  //! Refactor function getMerchs from app/get-merchs.tsx TODO: change duplicate code
+  const getMerchs = async () => {
+    try {
+      const { data } = await supabase.from('merch').select('*')
+
+      return data
+    } catch (error) {
+      console.error('Error fetching data:', error)
+      throw error
+    }
+  }
   const merchs = (await getMerchs()) as Data[]
   return (
     <section className='w-11/12 max-w-5xl mx-auto mt-12'>

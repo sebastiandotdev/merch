@@ -18,15 +18,4 @@ const navbarMerch = [
   },
 ]
 
-const getMerchs = async () => {
-  try {
-    const { data } = await supabase.from('merch').select('*')
-
-    return data
-  } catch (error) {
-    console.error('Error fetching data:', error)
-    throw error
-  }
-}
-
-export { navbarMerch, getMerchs }
+export { navbarMerch }
