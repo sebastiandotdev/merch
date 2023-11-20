@@ -1,20 +1,11 @@
 import { Data } from '../lib/types'
 import CardBuy from '../components/card-buy'
-import supabase from '../lib/supabase'
 import { Suspense } from 'react'
 import Loading from './loading'
+import { getMerchs } from '../lib/utils'
 
 export default async function GetMerchs() {
-  const getMerchs = async () => {
-    try {
-      const { data } = await supabase.from('merch').select('*')
 
-      return data
-    } catch (error) {
-      console.error('Error fetching data:', error)
-      throw error
-    }
-  }
   const merchs = (await getMerchs()) as Data[]
   return (
     <Suspense fallback={<Loading />}>
