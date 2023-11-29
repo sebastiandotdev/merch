@@ -1,6 +1,6 @@
 # Merch Pet land
 
-`Merch` open sources store for pet, building with ❤
+`Merch` open sources store for pet, building with ❤ Next.js
 
 ## Fork and Clone repository
 
