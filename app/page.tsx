@@ -1,7 +1,21 @@
 import Link from 'next/link'
 import GetMerchs from './get-merchs'
+import supabase from '../lib/supabase'
+import { Data } from '../lib/types'
+
+const getMerchs = async () => {
+  try {
+    const { data } = await supabase.from('merch').select('*')
+
+    return data
+  } catch (error) {
+    console.error('Error fetching data:', error)
+    throw error
+  }
+}
 
 export default async function HomePage() {
+  const merchs = (await getMerchs()) as Data[]
   return (
     <>
       <section className='h-[50vh] lg:h-screen bg-hero-pattern bg-cover bg-no-repeat relative flex items-start lg:items-center justify-start -z-10'>
@@ -23,7 +37,7 @@ export default async function HomePage() {
           Featured Products
         </h2>
         <div className='grid grid-cols-1 gap-8 sm:!gap-x-10 sm:!grid-cols-2 lg:!grid-cols-3 lg:!gap-x-12 lg:!gap-y-10'>
-          <GetMerchs />
+          <GetMerchs data={merchs} />
         </div>
       </section>
     </>
