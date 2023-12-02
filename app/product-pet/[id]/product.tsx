@@ -50,7 +50,7 @@ export default function Product({ product }: { product: Data }) {
         <h2 className='uppercase font-amiko text-4xl pt-4'>{product.title}</h2>
 
         <p className='font-amiko uppercase text-2xl py-6'>
-          $ {increment.incrementPrice} COP
+          ${increment.incrementPrice.toLocaleString()} COP
         </p>
         <div className='border border-black p-2 flex items-center justify-between max-w-[10rem]'>
           <button
@@ -76,11 +76,6 @@ export default function Product({ product }: { product: Data }) {
           </button>
         </div>
         <div className='py-6'>
-          <input
-            type='button'
-            value='Buy it now'
-            className='py-3 bg-gray-400 block w-full mt-4 text-white font-amiko cursor-pointer hover:opacity-90'
-          />
           <input
             type='button'
             value='Add to cart'

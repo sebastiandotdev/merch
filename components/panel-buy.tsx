@@ -83,7 +83,7 @@ export default function PanelBuy({ open, setOpen, products }: PanelBuyProps) {
                                         <Link href='#'>{product.title}</Link>
                                       </h3>
                                       <p className='ml-4 font-amiko'>
-                                        {product.incrementPrice}
+                                        ${product.incrementPrice.toLocaleString()}
                                       </p>
                                     </div>
                                     <p className='mt-1 text-sm text-gray-500 font-amiko'>
@@ -121,10 +121,10 @@ export default function PanelBuy({ open, setOpen, products }: PanelBuyProps) {
 
                         {products.length > 0 && (
                           <p className='font-amiko'>
-                            {products.reduce(
+                            ${products.reduce(
                               (acc, product) => acc + product.incrementPrice,
                               0,
-                            )}
+                            ).toLocaleString()}
                           </p>
                         )}
                       </div>
