@@ -29,7 +29,9 @@ export default function CardBuy({
           <h3 className='text-md text-gray-700 font-amiko'>{name}</h3>
           <p className='mt-1 text-sm text-gray-500 font-amiko'>{description}</p>
         </div>
-        <p className='text-md font-medium text-gray-900 font-amiko'>${price.toLocaleString()}</p>
+        <p className='text-md font-medium text-gray-900 font-amiko'>
+          ${price.toLocaleString()}
+        </p>
       </div>
     </Link>
   )
