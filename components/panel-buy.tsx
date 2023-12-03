@@ -7,6 +7,7 @@ import Image from 'next/image'
 import Link from 'next/link'
 import { PanelBuyProps } from '../lib/types'
 import { useCart } from '../app/Provider'
+import PaypalButton from './paypal'
 
 export default function PanelBuy({ open, setOpen, products }: PanelBuyProps) {
   const { clearLocalStorage, removeProduct } = useCart()
@@ -136,12 +137,7 @@ export default function PanelBuy({ open, setOpen, products }: PanelBuyProps) {
                         Shipping and taxes calculated at checkout.
                       </p>
                       <div className='mt-6'>
-                        <Link
-                          href='#'
-                          className='flex items-center justify-center rounded-md border border-transparent bg-zinc-600 px-6 py-3 text-base font-medium text-white shadow-sm hover:bg-zinc-700 font-amiko'
-                        >
-                          Checkout
-                        </Link>
+                        <PaypalButton />
                       </div>
                       <div className='mt-6 flex justify-center text-center text-sm text-gray-500'>
                         <p className='font-amiko'>
