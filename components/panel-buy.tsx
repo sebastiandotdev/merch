@@ -136,9 +136,12 @@ export default function PanelBuy({ open, setOpen, products }: PanelBuyProps) {
                       <p className='mt-0.5 text-sm text-gray-500 font-amiko'>
                         Shipping and taxes calculated at checkout.
                       </p>
-                      <div className='mt-6' style={{
-                        display: products.length > 0 ? 'block' : 'none'
-                      }}>
+                      <div
+                        className='mt-6'
+                        style={{
+                          display: products.length > 0 ? 'block' : 'none',
+                        }}
+                      >
                         <PaypalButton />
                       </div>
                       <div className='mt-6 flex justify-center text-center text-sm text-gray-500'>
