@@ -31,6 +31,9 @@ export default function PaypalButton() {
           console.log(data)
           await actions.order?.capture()
         }}
+        onCancel={(data) => {
+          console.log('Order cancel for: ', data)
+        }}
       />
     </PayPalScriptProvider>
   )
