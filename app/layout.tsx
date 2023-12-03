@@ -19,7 +19,7 @@ export default function RootLayout({
       <body>
         <CartContext>
           <Header />
-          <main>
+          <main className='relative'>
             {children}
             <hr />
             <section className='pb-[2.5rem] max-w-md mx-auto'>
