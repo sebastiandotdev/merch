@@ -97,7 +97,13 @@ export default function PanelBuy({ open, setOpen, products }: PanelBuyProps) {
                                       Qty {product.incrementProduct}
                                     </p>
 
-                                    <div className='flex'>
+                                    <div className='flex gap-x-4'>
+                                      <button
+                                        type='button'
+                                        className='font-medium font-amiko hover:text-green-400'
+                                      >
+                                        Update
+                                      </button>
                                       <button
                                         type='button'
                                         className='font-medium font-amiko hover:text-red-500'
