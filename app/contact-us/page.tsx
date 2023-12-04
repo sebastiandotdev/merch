@@ -1,14 +1,14 @@
 export default function ContactUs() {
   return (
     <section className='w-11/12 max-w-5xl mx-auto pt-4'>
-      <header className='px-10'>
+      <header className='lg:px-10'>
         <h2 className='text-[4.8rem] font-amiko mb-[3rem]'>Contact</h2>
       </header>
       <form action='#' className='px-10'>
-        <div className='grid grid-cols-2 gap-[2rem] w-full'>
+        <div className='grid lg:grid-cols-2 gap-[2rem] w-full auto-cols-auto'>
           <label
             htmlFor='name'
-            className='w-full border border-[#121212] mb-[2rem] p-3'
+            className='w-full border border-[#121212] lg:mb-[2rem] p-3'
           >
             <input
               type='text'
@@ -58,7 +58,7 @@ export default function ContactUs() {
         <input
           type='submit'
           value='Send'
-          className='bg-black text-white py-3 px-[3rem] min-h-[calc(4.5rem + 1px * 2)] hover:cursor-pointer hover:opacity-90'
+          className='bg-black text-white py-3 px-[3rem] min-h-[calc(4.5rem + 1px * 2)] hover:cursor-pointer hover:opacity-90 mb-4'
         />
       </form>
     </section>
