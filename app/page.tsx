@@ -3,6 +3,7 @@ import GetMerchs from './get-merchs'
 import supabase from '../lib/supabase'
 import { Data } from '../lib/types'
 import imageCat from '../public/background-pet-cat.jpg'
+import Postgres from './postgres'
 
 const getMerchs = async () => {
   try {
@@ -34,7 +35,7 @@ export default async function HomePage() {
           Featured Products
         </h2>
         <div className='grid grid-cols-1 gap-8 sm:!gap-x-10 sm:!grid-cols-2 lg:!grid-cols-3 lg:!gap-x-12 lg:!gap-y-10'>
-          <GetMerchs data={merchs} />
+          <Postgres />
         </div>
       </section>
     </>
