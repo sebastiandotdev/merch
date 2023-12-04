@@ -1,5 +1,3 @@
-import supabase from './supabase'
-
 const navbarMerch = [
   {
     id: 1,
@@ -16,6 +14,11 @@ const navbarMerch = [
     label: 'Contact',
     href: '/contact-us',
   },
+  {
+    id: 4,
+    label: 'Manage Store',
+    href: '/admin',
+  }
 ]
 
 export { navbarMerch }
