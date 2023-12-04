@@ -7,11 +7,7 @@ const config: Config = {
     './app/**/*.{js,ts,jsx,tsx,mdx}',
   ],
   theme: {
-    extend: {
-      backgroundImage: {
-        'hero-pattern': 'url("/background-pet-cat.jpg")',
-      },
-    },
+    extend: {},
     fontFamily: {
       amiko: ['Amiko', 'sans-serif'],
     },
