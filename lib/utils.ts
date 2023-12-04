@@ -18,7 +18,7 @@ const navbarMerch = [
     id: 4,
     label: 'Manage Store',
     href: '/admin',
-  }
+  },
 ]
 
 export { navbarMerch }
