@@ -25,7 +25,7 @@ export default function PaypalButton() {
   return (
     <PayPalScriptProvider options={{ clientId: CLIENT_ID }}>
       <PayPalButtons
-        style={{ color: 'blue', layout: 'horizontal' }}
+        style={{ color: 'gold', layout: 'horizontal' }}
         createOrder={handleCreateOrderForPaypal}
         onApprove={async (data, actions) => {
           console.log(data)
