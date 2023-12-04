@@ -7,4 +7,4 @@
 5. 🔨 Refactoring
 6. 🧪 Test
 7. 📦 Dependency
-8. 📖 Requires documentation update
+8. 📖 Update
