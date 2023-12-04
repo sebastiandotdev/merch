@@ -24,7 +24,7 @@ export default async function ProductById({ params }: Param) {
     <>
       {value.map((product) => (
         <section
-          className='w-11/12 max-w-5xl mx-auto pt-16 grid grid-cols-2 gap-x-6 relative'
+          className='w-11/12 max-w-5xl mx-auto pt-16 grid lg:grid-cols-2 gap-x-6 relative auto-cols-auto'
           key={product.id}
         >
           <Product product={product} />

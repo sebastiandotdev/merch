@@ -1,7 +1,8 @@
-import Link from 'next/link'
+import Image from 'next/image'
 import GetMerchs from './get-merchs'
 import supabase from '../lib/supabase'
 import { Data } from '../lib/types'
+import imageCat from '../public/background-pet-cat.jpg'
 
 const getMerchs = async () => {
   try {
@@ -18,19 +19,15 @@ export default async function HomePage() {
   const merchs = (await getMerchs()) as Data[]
   return (
     <>
-      <section className='h-[50vh] lg:h-screen bg-hero-pattern bg-cover bg-no-repeat relative flex items-start lg:items-center justify-start -z-10'>
-        <div className='bg-gray-400 opacity-30 lg:h-full w-full absolute'></div>
-        <article className='p-6 z-50 w-max'>
-          <h2 className='font-amiko text-5xl py-8 whitespace-pre-wrap font-semibold'>
-            Browse our latest products
-          </h2>
-          <Link
-            href='/catalog'
-            className='border-2 lg:border-zinc-800 lg:hover:border-zinc-950 py-2 px-6 hover:cursor-pointer hover:transition-colors text-lg border-zinc-950'
-          >
-            Shop all
-          </Link>
-        </article>
+      <section className='md:h-screen relative flex items-start lg:items-center justify-start -z-10'>
+        <div className='bg-gray-400 opacity-30 w-full absolute inset-0 lg:!h-full'></div>
+        <figure className='h-full'>
+          <Image
+            src={imageCat}
+            alt='Pet land is cool'
+            className='h-full object-cover'
+          />
+        </figure>
       </section>
       <section className='w-11/12 max-w-5xl mx-auto mt-24 pb-[2.5rem]'>
         <h2 className='font-amiko text-4xl font-semibold mb-10'>

@@ -45,14 +45,18 @@ export default function Product({ product }: { product: Data }) {
           height={400}
         />
       </figure>
-      <aside className='py-4 w-full px-20 sticky top-0'>
-        <h5 className='uppercase text-gray-400 font-amiko'>Pet land</h5>
-        <h2 className='uppercase font-amiko text-4xl pt-4'>{product.title}</h2>
+      <aside className='py-4 w-full px-6 lg:px-20 sticky top-0'>
+        <h5 className='uppercase text-gray-400 font-amiko lg:text-start text-center'>
+          Pet land
+        </h5>
+        <h2 className='uppercase font-amiko text-4xl pt-4 lg:text-start text-center'>
+          {product.title}
+        </h2>
 
-        <p className='font-amiko uppercase text-2xl py-6'>
+        <p className='font-amiko uppercase text-2xl py-6 lg:text-start text-center'>
           ${increment.incrementPrice.toLocaleString()} COP
         </p>
-        <div className='border border-black p-2 flex items-center justify-between max-w-[10rem]'>
+        <div className='border border-black p-2 flex items-center justify-between max-w-[10rem] lg:text-start text-center mx-auto lg:mx-0'>
           <button
             className='text-xl cursor-pointer'
             onClick={decrementPrice}
