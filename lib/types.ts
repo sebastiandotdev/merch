@@ -23,7 +23,7 @@ export type CardBuyProps = {
   description: string
 }
 export type Messageprops = { message: string; description: string }
-type ParamValue = { id: number }
+type ParamValue = { id: string }
 
 export type Increment = { incrementPrice: number; incrementProduct: number }
 
