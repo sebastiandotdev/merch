@@ -1,5 +1,5 @@
 import Messsage from '../../components/message'
-import { screen, render } from '@testing-library/react'
+import { render, screen } from '@testing-library/react'
 
 test('should render message', () => {
   render(
