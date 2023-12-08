@@ -158,7 +158,7 @@ export default function PanelBuy({ open, setOpen, products }: PanelBuyProps) {
                             onClick={clearLocalStorage}
                           >
                             Vaciar carrito
-                            <span aria-hidden='true'> &rarr;</span>
+                            <span aria-hidden='true'>&rarr;</span>
                           </button>
                         </p>
                       </div>
