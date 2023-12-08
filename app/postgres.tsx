@@ -14,7 +14,6 @@ export default function Postgres() {
 
         setMerchs(data as Data[])
       } catch (error) {
-        console.error('Error fetching data:', error)
         throw error
       }
     }
