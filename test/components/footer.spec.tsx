@@ -5,7 +5,7 @@ test('should render the footer', () => {
   render(<Footer />)
   const footer = screen.queryByRole('contentinfo') as HTMLElement
   expect(footer.tagName.toLowerCase()).toBe('footer')
-  expect(footer.textContent).toContain('Powered by labs')
+  expect(footer.textContent).toContain('Powered by castrogarciajs')
   expect(footer.textContent).toContain('Source')
   expect(footer.textContent).toContain('Made with Nextjs')
   expect(footer.className).toContain('flex')
