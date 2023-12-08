@@ -26,7 +26,7 @@ export default function Footer() {
         target='_blank'
         className='text-gray-600 hover:underline font-amiko'
       >
-        Powered by labs
+        Powered by castrogarciajs
       </a>
     </footer>
   )
