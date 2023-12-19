@@ -1,3 +1,6 @@
+import FieldInput from '../../components/ui/field-input'
+import FieldTitle from '../../components/ui/field-title'
+
 export default function Login() {
   return (
     <section className='w-11/12 max-w-5xl mx-auto pt-4 mb-4'>
@@ -6,41 +9,21 @@ export default function Login() {
       </header>
       <form action='#' className='px-10'>
         <div className='grid grid-cols-2 gap-[2rem] w-full'>
-          <label
-            htmlFor='name'
-            className='w-full border border-[#121212] mb-[2rem] p-3'
-          >
-            <input
-              type='text'
-              placeholder='Name'
-              name='name'
-              className='w-full outline-none'
-            />
-          </label>
-          <label
-            htmlFor='email'
-            className='w-full border border-[#121212] mb-[2rem] p-3'
-          >
-            <input
+          <FieldTitle htmlFor='name'>
+            <FieldInput type='text' placeholder='Jhon Doe' name='name' />
+          </FieldTitle>
+          <FieldTitle htmlFor='email'>
+            <FieldInput
               type='email'
-              placeholder='Email'
+              placeholder='jhondoe@email.com'
               name='email'
-              className='w-full outline-none'
             />
-          </label>
+          </FieldTitle>
         </div>
         <div className='flex w-full'>
-          <label
-            htmlFor='password'
-            className='w-full border border-[#121212] mb-[2rem] p-3 flex-1'
-          >
-            <input
-              type='password'
-              placeholder='Password'
-              name='password'
-              className='w-full outline-none'
-            />
-          </label>
+          <FieldTitle htmlFor='password'>
+            <FieldInput type='password' placeholder='*******' name='password' />
+          </FieldTitle>
         </div>
 
         <input

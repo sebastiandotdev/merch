@@ -1,3 +1,6 @@
+import FieldInput from '../../components/ui/field-input'
+import FieldTitle from '../../components/ui/field-title'
+
 export default function ContactUs() {
   return (
     <section className='w-11/12 max-w-5xl mx-auto pt-4'>
@@ -6,54 +9,31 @@ export default function ContactUs() {
       </header>
       <form action='#' className='px-10'>
         <div className='grid lg:grid-cols-2 gap-[2rem] w-full auto-cols-auto'>
-          <label
-            htmlFor='name'
-            className='w-full border border-[#121212] lg:mb-[2rem] p-3'
-          >
-            <input
+          <FieldTitle htmlFor='name'>
+            <FieldInput type='text' placeholder='Jhon Doe' name='name' />
+          </FieldTitle>
+          <FieldTitle htmlFor='email'>
+            <FieldInput
               type='text'
-              placeholder='Name'
+              placeholder='jhondoe@email.com'
               name='name'
-              className='w-full outline-none'
             />
-          </label>
-          <label
-            htmlFor='email'
-            className='w-full border border-[#121212] mb-[2rem] p-3'
-          >
-            <input
-              type='email'
-              placeholder='Email'
-              name='email'
-              className='w-full outline-none'
-            />
-          </label>
+          </FieldTitle>
         </div>
         <div className='flex w-full'>
-          <label
-            htmlFor='phone'
-            className='w-full border border-[#121212] mb-[2rem] p-3 flex-1'
-          >
-            <input
-              type='text'
-              placeholder='Phone number'
-              name='phone'
-              className='w-full outline-none'
-            />
-          </label>
+          <FieldTitle htmlFor='phone'>
+            <FieldInput type='text' placeholder='304192389102' name='phone' />
+          </FieldTitle>
         </div>
         <div className='flex w-full'>
-          <label
-            htmlFor='message'
-            className='w-full border border-[#121212] mb-[2rem] p-3 flex-1'
-          >
+          <FieldTitle>
             <textarea
               rows={10}
               placeholder='Comment'
               name='message'
               className='w-full outline-none resize-none'
             />
-          </label>
+          </FieldTitle>
         </div>
         <input
           type='submit'
