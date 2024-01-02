@@ -1,5 +1,4 @@
 import Image from 'next/image'
-import GetMerchs from './get-merchs'
 import supabase from '../lib/supabase'
 import { Data } from '../lib/types'
 import imageCat from '../public/background-pet-cat.jpg'
