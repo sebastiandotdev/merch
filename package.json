@@ -12,16 +12,18 @@
     "url": "git+https://github.com/castrogarciajs/merch.git"
   },
   "scripts": {
+    "dev-vscode": "bun install --frozen-lockfile && bun run dev",
     "fmt-check": "prettier . --check",
-    "dev-vscode": "pnpm install --frozen-lockfile && pnpm run dev",
+    "test-dev": "jest --watch",
+    "prepare": "node .husky/install.mjs",
     "build": "next build",
     "clean": "rimraf ./.next && rimraf ./node_modules && pnpm install",
     "start": "next start",
+    "test": "jest --ci",
     "lint": "next lint",
     "dev": "next dev",
     "fmt": "prettier . --write --cache",
-    "ci": "pnpm run lint && pnpm run fmt-check",
-    "prepare": "node .husky/install.mjs"
+    "ci": "bun run lint && bun run fmt-check && bun run test"
   },
   "dependencies": {
     "@headlessui/react": "1.7.17",
@@ -34,9 +36,12 @@
     "react": "18.2.0",
     "react-dom": "18.2.0",
     "sharp": "0.33.1",
+    "ts-node": "10.9.2",
     "uuid": "9.0.1"
   },
   "devDependencies": {
+    "@testing-library/jest-dom": "6.4.0",
+    "@testing-library/react": "14.2.0",
     "@types/node": "20.10.5",
     "@types/paypal__checkout-server-sdk": "1.0.8",
     "@types/react": "18.2.45",
@@ -45,7 +50,9 @@
     "autoprefixer": "10.4.17",
     "eslint": "8.56.0",
     "eslint-config-next": "14.1.0",
-    "husky": "^9.0.7",
+    "husky": "9.0.7",
+    "jest": "29.7.0",
+    "jest-environment-jsdom": "29.7.0",
     "postcss": "8.4.33",
     "prettier": "3.1.1",
     "rimraf": "5.0.5",
