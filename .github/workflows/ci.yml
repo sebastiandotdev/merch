@@ -1,4 +1,4 @@
-name: Main Workflow
+name: Main Workflow CI
 
 on:
   workflow_dispatch:
@@ -8,7 +8,7 @@ on:
     branches: [main]
 
 jobs:
-  build:
+  ci:
     runs-on: ubuntu-22.04
 
     steps:
@@ -22,4 +22,4 @@ jobs:
           cache: 'pnpm'
       - run: pnpm install --frozen-lockfile
 
-      - run: pnpm run workflows
+      - run: pnpm run ci
