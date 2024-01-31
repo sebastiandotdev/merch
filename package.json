@@ -20,7 +20,8 @@
     "lint": "next lint",
     "dev": "next dev",
     "fmt": "prettier . --write --cache",
-    "ci": "pnpm run lint && pnpm run fmt-check"
+    "ci": "pnpm run lint && pnpm run fmt-check",
+    "prepare": "node .husky/install.mjs"
   },
   "dependencies": {
     "@headlessui/react": "1.7.17",
@@ -44,6 +45,7 @@
     "autoprefixer": "10.4.17",
     "eslint": "8.56.0",
     "eslint-config-next": "14.1.0",
+    "husky": "^9.0.7",
     "postcss": "8.4.33",
     "prettier": "3.1.1",
     "rimraf": "5.0.5",
