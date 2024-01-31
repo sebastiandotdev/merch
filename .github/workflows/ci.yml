@@ -13,13 +13,9 @@ jobs:
 
     steps:
       - uses: actions/checkout@v2
-      - uses: pnpm/action-setup@v2
+      - uses: oven-sh/setup-bun@v1
         with:
-          version: 8
-      - uses: actions/setup-node@v3
-        with:
-          node-version: 18.x
-          cache: 'pnpm'
-      - run: pnpm install --frozen-lockfile
+          bun-version: latest
 
-      - run: pnpm run ci
+      - run: bun install
+      - run: bun run ci
