@@ -1,4 +1,4 @@
-import { Data } from '../lib/types'
+import { Data } from '../src/lib/types'
 import CardBuy from '../components/card-buy'
 import { Suspense } from 'react'
 import Loading from './loading'

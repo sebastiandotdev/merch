@@ -1,4 +1,4 @@
-import Messsage from '../../components/message'
+import Messsage from './message'
 import { render, screen } from '@testing-library/react'
 
 test('should render message', () => {
