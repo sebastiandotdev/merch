@@ -7,6 +7,7 @@ import GetMerchs from './get-merchs'
 
 export default function Postgres() {
   const [merchs, setMerchs] = useState<Data[]>([])
+
   useEffect(() => {
     const getMerchs = async () => {
       try {

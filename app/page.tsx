@@ -1,22 +1,8 @@
 import Image from 'next/image'
-import supabase from '../lib/supabase'
-import { Data } from '../lib/types'
 import imageCat from '../public/background-pet-cat.jpg'
 import Postgres from './postgres'
 
-const getMerchs = async () => {
-  try {
-    const { data } = await supabase.from('merch').select('*')
-
-    return data
-  } catch (error) {
-    console.error('Error fetching data:', error)
-    throw error
-  }
-}
-
 export default async function HomePage() {
-  const merchs = (await getMerchs()) as Data[]
   return (
     <>
       <section className='md:h-screen relative flex items-start lg:items-center justify-start -z-10'>

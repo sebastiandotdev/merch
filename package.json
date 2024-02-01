@@ -17,7 +17,6 @@
     "test-dev": "jest --watch",
     "prepare": "node .husky/install.mjs",
     "build": "next build",
-    "clean": "rimraf ./.next && rimraf ./node_modules && pnpm install",
     "start": "next start",
     "test": "jest --ci",
     "lint": "next lint",
@@ -55,7 +54,6 @@
     "jest-environment-jsdom": "29.7.0",
     "postcss": "8.4.33",
     "prettier": "3.1.1",
-    "rimraf": "5.0.5",
     "tailwindcss": "3.4.1",
     "typescript": "5.3.3"
   }
