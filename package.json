@@ -25,7 +25,6 @@
     "ci": "bun run lint && bun run fmt-check && bun run test"
   },
   "dependencies": {
-    "@headlessui/react": "1.7.17",
     "@paypal/checkout-server-sdk": "1.0.3",
     "@paypal/react-paypal-js": "8.1.3",
     "@supabase/auth-helpers-nextjs": "0.9.0",
@@ -41,6 +40,7 @@
   "devDependencies": {
     "@testing-library/jest-dom": "6.4.0",
     "@testing-library/react": "14.2.0",
+    "@types/jest": "29.5.11",
     "@types/node": "20.10.5",
     "@types/paypal__checkout-server-sdk": "1.0.8",
     "@types/react": "18.2.45",
