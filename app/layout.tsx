@@ -1,20 +1,19 @@
 import '../public/styles/globals.css'
 
 import { CartContext } from './Provider'
-import type { Metadata } from 'next'
 import Footer from '../components/footer'
 import Header from '../components/header'
+import type { Metadata } from 'next'
 
+type LayoutProps = {
+  children: React.ReactNode
+}
 export const metadata: Metadata = {
-  title: 'The Shop Pet Land',
+  title: 'Pet Land',
   description: 'The Shop Pet Land - The best pet shop in the world',
 }
 
-export default function RootLayout({
-  children,
-}: {
-  children: React.ReactNode
-}) {
+export default function RootLayout({ children }: LayoutProps) {
   return (
     <html lang='en'>
       <body>
@@ -24,9 +23,7 @@ export default function RootLayout({
             {children}
             <hr />
             <section className='pb-[2.5rem] max-w-md mx-auto'>
-              <h2 className='font-amiko text-center my-10'>
-                Subscribe to our email
-              </h2>
+              <h2 className=' text-center my-10'>Subscribe to our email</h2>
 
               <form action='#' className='text-center'>
                 <label
