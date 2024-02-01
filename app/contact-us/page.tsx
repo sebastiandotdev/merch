@@ -5,7 +5,7 @@ export default function ContactUs() {
   return (
     <section className='w-11/12 max-w-5xl mx-auto pt-4'>
       <header className='lg:px-10'>
-        <h2 className='text-[4.8rem] font-amiko mb-[3rem]'>Contact</h2>
+        <h2 className='text-[4.8rem]  mb-[3rem]'>Contact</h2>
       </header>
       <form action='#' className='px-10'>
         <div className='grid lg:grid-cols-2 gap-[2rem] w-full auto-cols-auto'>

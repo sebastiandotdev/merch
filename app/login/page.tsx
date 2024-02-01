@@ -5,7 +5,7 @@ export default function Login() {
   return (
     <section className='w-11/12 max-w-5xl mx-auto pt-4 mb-4'>
       <header className='px-10'>
-        <h2 className='text-[4.8rem] font-amiko mb-[3rem]'>Login</h2>
+        <h2 className='text-[4.8rem]  mb-[3rem]'>Login</h2>
       </header>
       <form action='#' className='px-10'>
         <div className='grid grid-cols-2 gap-[2rem] w-full'>

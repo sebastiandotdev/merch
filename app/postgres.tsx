@@ -1,9 +1,10 @@
 'use client'
 
-import { useEffect, useState } from 'react'
+import { Suspense, useEffect, useState } from 'react'
 import { Data } from '../lib/types'
 import supabase from '../lib/supabase'
-import GetMerchs from './get-merchs'
+import Loading from './loading'
+import CardBuy from '../components/card-buy'
 
 export default function Postgres() {
   const [merchs, setMerchs] = useState<Data[]>([])
@@ -23,7 +24,18 @@ export default function Postgres() {
 
   return (
     <>
-      <GetMerchs data={merchs} />
+      <Suspense fallback={<Loading />}>
+        {merchs.map((merch) => (
+          <CardBuy
+            key={merch.id}
+            id={merch.id}
+            name={merch.title}
+            image={merch.photo}
+            price={merch.price}
+            description={merch.description}
+          />
+        ))}
+      </Suspense>
     </>
   )
 }
