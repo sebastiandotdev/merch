@@ -29,6 +29,7 @@ export default async function HomePage() {
           />
         </figure>
       </section>
+
       <section className='w-11/12 max-w-5xl mx-auto mt-24 pb-[2.5rem]'>
         <h2 className='font-amiko text-4xl font-semibold mb-10'>
           Featured Products

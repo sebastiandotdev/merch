@@ -1,8 +1,9 @@
-import type { Metadata } from 'next'
 import '../public/styles/globals.css'
-import Header from '../components/header'
-import Footer from '../components/footer'
+
 import { CartContext } from './Provider'
+import type { Metadata } from 'next'
+import Footer from '../components/footer'
+import Header from '../components/header'
 
 export const metadata: Metadata = {
   title: 'The Shop Pet Land',

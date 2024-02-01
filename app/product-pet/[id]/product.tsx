@@ -80,9 +80,9 @@ export default function Product({ product }: { product: Data }) {
           </button>
         </div>
         <div className='py-6'>
-          <input
+          <button
             type='button'
-            value='Add to cart'
+            data-ripple-light='true'
             className='py-3 bg-blue-500 block w-full mt-4 text-white font-amiko cursor-pointer hover:opacity-90'
             style={{
               backgroundColor: isSave ? '#ccc' : '#3b82f6',
@@ -90,7 +90,9 @@ export default function Product({ product }: { product: Data }) {
             }}
             onClick={() => addProduct(product, increment)}
             disabled={isSave}
-          />
+          >
+            Add to cart
+          </button>
         </div>
       </aside>
     </>
