@@ -4,7 +4,7 @@ import { useEffect, useState } from 'react'
 import supabase from '../../lib/supabase'
 import { Data } from '../../lib/types'
 
-import GetMerchs from '../get-merchs'
+import GetMerchs from '../postgres'
 
 export default function PageCatalog() {
   const [merchs, setMerchs] = useState<Data[]>([])
@@ -47,7 +47,7 @@ export default function PageCatalog() {
     }
   }
   return (
-    <section className='w-11/12 max-w-5xl mx-auto mt-12'>
+    <section className='w-11/12 max-w-5xl mx-auto mt-44'>
       <h2 className='text-4xl  mb-12'>Products</h2>
       <header className='flex justify-between items-center mb-12'>
         <nav className='flex items-center'>
@@ -70,7 +70,7 @@ export default function PageCatalog() {
         </nav>
       </header>
       <section className='grid grid-cols-1 gap-8 sm:!gap-x-10 sm:!grid-cols-2 lg:!grid-cols-3 lg:!gap-x-12 lg:!gap-y-10'>
-        <GetMerchs data={merchs} />
+        <GetMerchs />
       </section>
     </section>
   )
