@@ -2,7 +2,6 @@
 
 import { useEffect, useState } from 'react'
 import { IconCartTabler } from './icons'
-import PanelBuy from './panel-buy'
 import { useCart } from '../app/Provider'
 
 export default function Cart() {
@@ -13,7 +12,7 @@ export default function Cart() {
 
   return (
     <div role='tooltip'>
-      <PanelBuy open={openPanel} setOpen={setOpenPanel} products={cart} />
+      {/* <PanelBuy open={openPanel} setOpen={setOpenPanel} products={cart} /> */}
       <button
         className='flex gap-2 items-center border-2 border-gray-800 rounded-full px-5 py-1 font-semibold text-gray-800 hover:bg-gray-800 hover:text-white transition-colors duration-300'
         id='total'
