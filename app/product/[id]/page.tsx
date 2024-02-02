@@ -38,7 +38,7 @@ export default function ProductById({ params }: Param) {
     <>
       <section className='px-6'>
         <BackBanner title='Regresar'>
-          <h2 className='font-amiko text-xl font-light'>Merch Storage</h2>
+          <h2 className=' text-xl font-light'>Merch Storage</h2>
         </BackBanner>
       </section>
       {value.map((product) => (

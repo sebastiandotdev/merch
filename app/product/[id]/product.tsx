@@ -46,14 +46,14 @@ export default function Product({ product }: { product: Data }) {
         />
       </figure>
       <aside className='py-4 w-full px-6 lg:px-20 sticky top-0'>
-        <h5 className='uppercase text-gray-400 font-amiko lg:text-start text-center'>
+        <h5 className='uppercase text-gray-400  lg:text-start text-center'>
           Pet land
         </h5>
-        <h2 className='uppercase font-amiko text-4xl pt-4 lg:text-start text-center'>
+        <h2 className='uppercase  text-4xl pt-4 lg:text-start text-center'>
           {product.title}
         </h2>
 
-        <p className='font-amiko uppercase text-2xl py-6 lg:text-start text-center'>
+        <p className=' uppercase text-2xl py-6 lg:text-start text-center'>
           ${increment.incrementPrice.toLocaleString()} COP
         </p>
         <div className='border border-black p-2 flex items-center justify-between max-w-[10rem] lg:text-start text-center mx-auto lg:mx-0'>
@@ -72,7 +72,7 @@ export default function Product({ product }: { product: Data }) {
           >
             <Minus />
           </button>
-          <small className='font-amiko text-xl uppercase'>
+          <small className=' text-xl uppercase'>
             {increment.incrementProduct}
           </small>
           <button className='text-xl cursor-pointer' onClick={incrementPrice}>
@@ -83,7 +83,7 @@ export default function Product({ product }: { product: Data }) {
           <button
             type='button'
             data-ripple-light='true'
-            className='py-3 bg-blue-500 block w-full mt-4 text-white font-amiko cursor-pointer hover:opacity-90'
+            className='py-3 bg-blue-500 block w-full mt-4 text-white  cursor-pointer hover:opacity-90'
             style={{
               backgroundColor: isSave ? '#ccc' : '#3b82f6',
               cursor: isSave ? 'not-allowed' : 'pointer',

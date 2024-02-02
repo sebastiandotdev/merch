@@ -29,9 +29,7 @@ export default function BackBanner({
               <path d='M15 6l-6 6l6 6' />
             </svg>
           </div>
-          <h2 className='font-amiko font-light text-xl uppercase -mb-0.5'>
-            {title}
-          </h2>
+          <h2 className=' font-light text-xl uppercase -mb-0.5'>{title}</h2>
         </nav>
       </Link>
       <div className='px-2 flex items-center gap-4'>

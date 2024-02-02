@@ -4,7 +4,7 @@ import { useEffect, useState } from 'react'
 import supabase from '../../lib/supabase'
 import { Data } from '../../lib/types'
 
-import GetMerchs from '../get-merchs'
+import GetMerchs from '../postgres'
 
 export default function PageCatalog() {
   const [merchs, setMerchs] = useState<Data[]>([])
@@ -47,11 +47,11 @@ export default function PageCatalog() {
     }
   }
   return (
-    <section className='w-11/12 max-w-5xl mx-auto mt-12'>
-      <h2 className='text-4xl font-amiko mb-12'>Products</h2>
+    <section className='w-11/12 max-w-5xl mx-auto mt-44'>
+      <h2 className='text-4xl  mb-12'>Products</h2>
       <header className='flex justify-between items-center mb-12'>
         <nav className='flex items-center'>
-          <h5 className='font-amiko text-md text-zinc-600'>Filter:</h5>
+          <h5 className=' text-md text-zinc-600'>Filter:</h5>
         </nav>
         <nav className='flex items-center gap-x-4'>
           <select
@@ -64,13 +64,13 @@ export default function PageCatalog() {
             <option value='up'>Order upward</option>
             <option value='fa'>Order falling</option>
           </select>
-          <small className='font-amiko text-md text-zinc-600'>
+          <small className=' text-md text-zinc-600'>
             {merchs.length > 0 ? merchs.length : 0} products
           </small>
         </nav>
       </header>
       <section className='grid grid-cols-1 gap-8 sm:!gap-x-10 sm:!grid-cols-2 lg:!grid-cols-3 lg:!gap-x-12 lg:!gap-y-10'>
-        <GetMerchs data={merchs} />
+        <GetMerchs />
       </section>
     </section>
   )

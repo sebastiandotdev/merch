@@ -12,7 +12,7 @@ export default function CardBuy({
 }: CardBuyProps) {
   return (
     <Link
-      href={`/product-pet/${name.toLowerCase().replace(/ /g, '-')}-${id}`}
+      href={`/product/${name.toLowerCase().replace(/ /g, '-')}-${id}`}
       className='group'
     >
       <header className='aspect-h-1 aspect-w-1 w-full overflow-hidden rounded-md bg-gray-200 lg:aspect-none group-hover:opacity-75 lg:h-80 relative'>
@@ -29,10 +29,10 @@ export default function CardBuy({
       </header>
       <div className='mt-4 flex justify-between'>
         <div className='container px-0.5'>
-          <h3 className='text-md text-gray-700 font-amiko'>{name}</h3>
-          <p className='mt-1 text-sm text-gray-500 font-amiko'>{description}</p>
+          <h3 className='text-md text-gray-700 '>{name}</h3>
+          <p className='mt-1 text-sm text-gray-500 '>{description}</p>
         </div>
-        <p className='text-md font-medium text-gray-900 font-amiko'>
+        <p className='text-md font-medium text-gray-900 '>
           ${price.toLocaleString()}
         </p>
       </div>

@@ -4,7 +4,6 @@ import { FormEvent, useState } from 'react'
 import supabase from '../../lib/supabase'
 import { v4 as uuidv4 } from 'uuid'
 import Loading from '../loading'
-import Messsage from '../../components/message'
 
 export default function AdminPage() {
   const [image, setImage] = useState<File | null>(null)
@@ -73,7 +72,7 @@ export default function AdminPage() {
 
   return (
     <section className='w-11/12 max-w-5xl mx-auto mt-12'>
-      <h2 className='font-amiko text-5xl'>Welcome to page admin</h2>
+      <h2 className=' text-5xl'>Welcome to page admin</h2>
       {loadingAdmin ? (
         <Loading />
       ) : (
@@ -135,14 +134,6 @@ export default function AdminPage() {
             className='bg-black text-white py-3 px-[3rem] min-h-[calc(4.5rem + 1px * 2)] hover:cursor-pointer hover:opacity-90'
           />
         </form>
-      )}
-      {isSave ? (
-        <Messsage
-          message={messages.message}
-          description={messages.description}
-        />
-      ) : (
-        ''
       )}
     </section>
   )
