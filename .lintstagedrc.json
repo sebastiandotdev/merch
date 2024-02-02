@@ -1,4 +1,4 @@
 {
-  "*.{}": "next lint",
-  "*": "prettier --write --cache"
+  "*.{js,jsx,ts,tsx}": "next lint",
+  "*.{json,md, js, jsx, tsx, ts}": "prettier --write --cache"
 }
